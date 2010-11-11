@@ -8,6 +8,8 @@
 
 #import "SpiritRadioViewController.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "RadarView.h"
 
 @implementation SpiritRadioViewController
@@ -15,7 +17,7 @@
 - (UIView *) view {
     UIView *view = [super view];
     if (view) {
-            view.backgroundColor = [UIColor colorWithRed:(18.0/255.0) green:(18.0/255.0) blue:(15.0/255.0) alpha:1];
+        view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
     }
     return view;
 }

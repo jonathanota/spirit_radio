@@ -21,6 +21,10 @@
 		50565385128B9FFB0000CC7D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505651BA128B915B0000CC7D /* QuartzCore.framework */; };
 		5056542D128BAD700000CC7D /* radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5056542C128BAD700000CC7D /* radar.png */; };
 		5056542E128BAD700000CC7D /* radar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5056542C128BAD700000CC7D /* radar.png */; };
+		505654D4128BB8DF0000CC7D /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505654D3128BB8DF0000CC7D /* background@2x.png */; };
+		505654D5128BB8DF0000CC7D /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 505654D3128BB8DF0000CC7D /* background@2x.png */; };
+		505654E8128BBA9B0000CC7D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 505654E7128BBA9B0000CC7D /* Default.png */; };
+		505654E9128BBA9B0000CC7D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 505654E7128BBA9B0000CC7D /* Default.png */; };
 		AE26662B11EFB89800EE18BD /* MyModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE26662A11EFB89800EE18BD /* MyModelSpec.m */; };
 		AE26663311EFB93400EE18BD /* MyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE26663211EFB93400EE18BD /* MyModel.m */; };
 		AE26667711EFBAB100EE18BD /* Cedar-iPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE42792411EF992A00CFF331 /* Cedar-iPhone.framework */; };
@@ -68,6 +72,8 @@
 		505651BA128B915B0000CC7D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		505652EF128B9C620000CC7D /* SpiritRadioViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiritRadioViewControllerSpec.m; sourceTree = "<group>"; };
 		5056542C128BAD700000CC7D /* radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radar.png; sourceTree = "<group>"; };
+		505654D3128BB8DF0000CC7D /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		505654E7128BBA9B0000CC7D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AE26662A11EFB89800EE18BD /* MyModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModelSpec.m; sourceTree = "<group>"; };
 		AE26663111EFB93400EE18BD /* MyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModel.h; sourceTree = "<group>"; };
 		AE26663211EFB93400EE18BD /* MyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModel.m; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 				50565425128BAD540000CC7D /* Images */,
 				AE4279BC11EFB65000CFF331 /* UISpecs-Info.plist */,
 				50564E2F128B7BC00000CC7D /* Spirit Radio-Info.plist */,
+				505654E7128BBA9B0000CC7D /* Default.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -186,6 +193,7 @@
 		50565425128BAD540000CC7D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				505654D3128BB8DF0000CC7D /* background@2x.png */,
 				5056542C128BAD700000CC7D /* radar.png */,
 			);
 			path = Images;
@@ -384,6 +392,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5056542E128BAD700000CC7D /* radar.png in Resources */,
+				505654D5128BB8DF0000CC7D /* background@2x.png in Resources */,
+				505654E9128BBA9B0000CC7D /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +402,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5056542D128BAD700000CC7D /* radar.png in Resources */,
+				505654D4128BB8DF0000CC7D /* background@2x.png in Resources */,
+				505654E8128BBA9B0000CC7D /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -473,6 +486,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "$SRCROOT/Resources/Spirit Radio-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = (
 					"-framework",
 					Foundation,
@@ -579,6 +593,7 @@
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
 				INFOPLIST_FILE = "$SRCROOT/Resources/UISpecs-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lstdc++",
@@ -589,7 +604,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = UISpecs;
-				SDKROOT = iphonesimulator4.0;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};

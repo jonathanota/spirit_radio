@@ -18,8 +18,11 @@
         mScreenCircle.frame = self.bounds;
         mScreenCircle.backgroundColor = [UIColor blackColor].CGColor;
         mScreenCircle.cornerRadius = self.bounds.size.width / 2;
-        mScreenCircle.borderColor = [UIColor colorWithRed:(30.0/255.0) green:(28.0/255.0) blue:(24.0/255.0) alpha:1].CGColor;
+        mScreenCircle.borderColor = [UIColor colorWithRed:(50.0/255.0) green:(48.0/255.0) blue:(44.0/255.0) alpha:1].CGColor;
         mScreenCircle.borderWidth = 5.0;
+        mScreenCircle.shadowRadius = 10.0;
+        mScreenCircle.shadowColor = [UIColor blackColor].CGColor;
+        mScreenCircle.shadowOpacity = 1.0;
         mScreenCircle.contents = [UIImage imageNamed:@"radar"].CGImage;
     }
     return mScreenCircle;
