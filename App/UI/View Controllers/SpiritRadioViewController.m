@@ -12,6 +12,14 @@
 
 @implementation SpiritRadioViewController
 
+- (UIView *) view {
+    UIView *view = [super view];
+    if (view) {
+            view.backgroundColor = [UIColor colorWithRed:(18.0/255.0) green:(18.0/255.0) blue:(15.0/255.0) alpha:1];
+    }
+    return view;
+}
+
 - (RadarView *) radarView {
     if (!mRadarView) {
         mRadarView = [[RadarView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width)];
