@@ -12,6 +12,7 @@
 #import <OCMock-iPhone/OCMock.h>
 
 #import "SpiritRadioAppDelegate.h"
+#import "SpiritRadioViewController.h"
 
 SPEC_BEGIN(SpiritRadioAppDelegateSpec)
 

@@ -13,6 +13,12 @@
 		50564FDF128B81200000CC7D /* SpiritRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50564FDE128B81200000CC7D /* SpiritRadioViewController.m */; };
 		50564FE0128B81200000CC7D /* SpiritRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50564FDE128B81200000CC7D /* SpiritRadioViewController.m */; };
 		50565020128B83B00000CC7D /* SpiritRadioAppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056501E128B83B00000CC7D /* SpiritRadioAppDelegateSpec.m */; };
+		50565189128B8F180000CC7D /* RadarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50565188128B8F180000CC7D /* RadarView.m */; };
+		5056518A128B8F180000CC7D /* RadarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50565188128B8F180000CC7D /* RadarView.m */; };
+		5056518C128B8F360000CC7D /* RadarViewSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056518B128B8F360000CC7D /* RadarViewSpec.m */; };
+		505651BB128B915B0000CC7D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505651BA128B915B0000CC7D /* QuartzCore.framework */; };
+		505652F0128B9C620000CC7D /* SpiritRadioViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 505652EF128B9C620000CC7D /* SpiritRadioViewControllerSpec.m */; };
+		50565385128B9FFB0000CC7D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 505651BA128B915B0000CC7D /* QuartzCore.framework */; };
 		AE26662B11EFB89800EE18BD /* MyModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE26662A11EFB89800EE18BD /* MyModelSpec.m */; };
 		AE26663311EFB93400EE18BD /* MyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE26663211EFB93400EE18BD /* MyModel.m */; };
 		AE26667711EFBAB100EE18BD /* Cedar-iPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE42792411EF992A00CFF331 /* Cedar-iPhone.framework */; };
@@ -54,6 +60,11 @@
 		50564FDD128B81200000CC7D /* SpiritRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiritRadioViewController.h; sourceTree = "<group>"; };
 		50564FDE128B81200000CC7D /* SpiritRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiritRadioViewController.m; sourceTree = "<group>"; };
 		5056501E128B83B00000CC7D /* SpiritRadioAppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiritRadioAppDelegateSpec.m; sourceTree = "<group>"; };
+		50565187128B8F180000CC7D /* RadarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadarView.h; sourceTree = "<group>"; };
+		50565188128B8F180000CC7D /* RadarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarView.m; sourceTree = "<group>"; };
+		5056518B128B8F360000CC7D /* RadarViewSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadarViewSpec.m; sourceTree = "<group>"; };
+		505651BA128B915B0000CC7D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		505652EF128B9C620000CC7D /* SpiritRadioViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiritRadioViewControllerSpec.m; sourceTree = "<group>"; };
 		AE26662A11EFB89800EE18BD /* MyModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModelSpec.m; sourceTree = "<group>"; };
 		AE26663111EFB93400EE18BD /* MyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModel.h; sourceTree = "<group>"; };
 		AE26663211EFB93400EE18BD /* MyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModel.m; sourceTree = "<group>"; };
@@ -75,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50565385128B9FFB0000CC7D /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +107,7 @@
 				AE26667711EFBAB100EE18BD /* Cedar-iPhone.framework in Frameworks */,
 				AE26667811EFBAB100EE18BD /* OCHamcrest-iPhone.framework in Frameworks */,
 				AE2667B211EFC2B000EE18BD /* OCMock-iPhone.framework in Frameworks */,
+				505651BB128B915B0000CC7D /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +163,14 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		505652EB128B9C3D0000CC7D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				505652EF128B9C620000CC7D /* SpiritRadioViewControllerSpec.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		AE26662C11EFB8B900EE18BD /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +218,7 @@
 				AE4277F811EF91FB00CFF331 /* OCMock.framework */,
 				AE42792411EF992A00CFF331 /* Cedar-iPhone.framework */,
 				AE42794311EF997500CFF331 /* OCHamcrest-iPhone.framework */,
+				505651BA128B915B0000CC7D /* QuartzCore.framework */,
 			);
 			path = Externals;
 			sourceTree = "<group>";
@@ -204,6 +226,7 @@
 		AE42797411EFB1D500CFF331 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				505652EB128B9C3D0000CC7D /* View Controllers */,
 				50565013128B83330000CC7D /* Application Delegates */,
 				AE42797711EFB2FD00CFF331 /* Views */,
 				AE4279F411EFB7A000CFF331 /* main.m */,
@@ -214,6 +237,7 @@
 		AE42797711EFB2FD00CFF331 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5056518B128B8F360000CC7D /* RadarViewSpec.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +255,8 @@
 		AE42798111EFB3DC00CFF331 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				50565187128B8F180000CC7D /* RadarView.h */,
+				50565188128B8F180000CC7D /* RadarView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -357,6 +383,7 @@
 				50564F97128B7D800000CC7D /* SpiritRadioAppDelegate.m in Sources */,
 				50564F8E128B7D540000CC7D /* main.m in Sources */,
 				50564FDF128B81200000CC7D /* SpiritRadioViewController.m in Sources */,
+				50565189128B8F180000CC7D /* RadarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +405,9 @@
 				50564DF6128B7A180000CC7D /* SpiritRadioAppDelegate.m in Sources */,
 				50564FE0128B81200000CC7D /* SpiritRadioViewController.m in Sources */,
 				50565020128B83B00000CC7D /* SpiritRadioAppDelegateSpec.m in Sources */,
+				5056518A128B8F180000CC7D /* RadarView.m in Sources */,
+				5056518C128B8F360000CC7D /* RadarViewSpec.m in Sources */,
+				505652F0128B9C620000CC7D /* SpiritRadioViewControllerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

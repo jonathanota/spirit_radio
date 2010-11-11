@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class RadarView;
 
 @interface SpiritRadioViewController : UIViewController {
-
+    RadarView *mRadarView;
 }
+
+@property (readonly) RadarView *radarView;
 
 @end
