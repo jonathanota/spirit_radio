@@ -9,11 +9,12 @@
 #import "SpiritRadioAppDelegate.h"
 
 #import "SpiritRadioViewController.h"
+#import "RadarView.h"
 
 @implementation SpiritRadioAppDelegate
 
 @synthesize window;
-@synthesize viewController;
+@synthesize radioViewController = mRadioViewController;
 
 - (Class) viewControllerClass {
     return [SpiritRadioViewController class];
@@ -27,17 +28,33 @@
     if (self) {
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
-        self.viewController = [[self.viewControllerClass alloc] init];
-        [self.window addSubview:viewController.view];
+        self.radioViewController = [[SpiritRadioViewController alloc] init];
+        [self.window addSubview:self.radioViewController.view];
+        
+        [NSTimer scheduledTimerWithTimeInterval:(1.0/60.0) target:self selector:@selector(updateViews) userInfo:nil repeats:YES];
     }
     return self;
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+- (void) updateViews {
+    self.radioViewController.radarView.originOrientation = mRadians;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     [self.window makeKeyAndVisible];
 
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingHeading];
+    [locationManager startUpdatingLocation];
+    
     return YES;
+}
+
+- (void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
+    CLLocationDirection heading = newHeading.trueHeading;
+    mRadians = (90.0 - heading) * (M_PI/180.0);
 }
 
 
@@ -90,7 +107,7 @@
 
 
 - (void)dealloc {
-    [viewController release];
+    [mRadioViewController release];
     [window release];
     [super dealloc];
 }

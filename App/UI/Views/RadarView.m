@@ -12,17 +12,28 @@
 
 @implementation RadarView
 
+@synthesize originOrientation = mOriginOrientation;
+
+- (void) setOriginOrientation:(CGFloat)newOrientation {
+    mOriginOrientation = newOrientation;
+    
+    NSLog(@"%f", newOrientation);
+    
+    [UIView beginAnimations:nil context:NULL];
+    self.transform = CGAffineTransformMakeRotation(newOrientation);
+    [UIView commitAnimations];
+}
+
 - (CALayer *) screenCircle {
     if (!mScreenCircle) {
         mScreenCircle = [[CALayer layer] retain];
         mScreenCircle.frame = self.bounds;
-        mScreenCircle.backgroundColor = [UIColor blackColor].CGColor;
-        mScreenCircle.cornerRadius = self.bounds.size.width / 2;
         mScreenCircle.borderColor = [UIColor colorWithRed:(50.0/255.0) green:(48.0/255.0) blue:(44.0/255.0) alpha:1].CGColor;
+        mScreenCircle.cornerRadius = self.bounds.size.width / 2;
         mScreenCircle.borderWidth = 5.0;
-        mScreenCircle.shadowRadius = 10.0;
-        mScreenCircle.shadowColor = [UIColor blackColor].CGColor;
-        mScreenCircle.shadowOpacity = 1.0;
+//        mScreenCircle.shadowRadius = 10.0;
+//        mScreenCircle.shadowColor = [UIColor blackColor].CGColor;
+//        mScreenCircle.shadowOpacity = 1.0;
         mScreenCircle.contents = [UIImage imageNamed:@"radar"].CGImage;
     }
     return mScreenCircle;
@@ -43,8 +54,8 @@
     
     self = [super initWithFrame:frame];
     if (self) {
-        self.opaque = NO;
-        self.backgroundColor = [UIColor clearColor];
+//        self.opaque = NO;
+//        self.backgroundColor = [UIColor clearColor];
         
         [self.layer addSublayer:self.screenCircle];
     }

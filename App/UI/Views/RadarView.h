@@ -17,4 +17,6 @@
 @property (readonly) CALayer *screenCircle;
 @property (readonly) CALayer *originCircle;
 
+@property (nonatomic, assign) CGFloat originOrientation;
+
 @end

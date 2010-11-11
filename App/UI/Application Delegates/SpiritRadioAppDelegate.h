@@ -7,17 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class SpiritRadioViewController;
 
-@interface SpiritRadioAppDelegate : NSObject <UIApplicationDelegate> {
+@interface SpiritRadioAppDelegate : NSObject <UIApplicationDelegate, CLLocationManagerDelegate> {
     UIWindow *window;
-    UIViewController *viewController;
+    SpiritRadioViewController *mRadioViewController;
+    
+    CLLocationManager *locationManager;
+    
+    CGFloat mRadians;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UIViewController *viewController;
-@property (nonatomic, readonly) Class viewControllerClass;
+@property (nonatomic, retain) IBOutlet SpiritRadioViewController *radioViewController;
 
 @end
 
