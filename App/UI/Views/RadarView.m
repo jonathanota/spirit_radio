@@ -27,6 +27,10 @@
 - (CALayer *) originCircle {
     if (!mOriginCircle) {
         mOriginCircle = [[CALayer layer] retain];
+        mOriginCircle.bounds = CGRectMake(0, 0, 10, 10);
+        mOriginCircle.cornerRadius = mOriginCircle.bounds.size.width / 2;
+        mOriginCircle.position = self.center;
+        mOriginCircle.backgroundColor = [UIColor greenColor].CGColor;
     }
     return mOriginCircle;
 }
@@ -36,6 +40,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self.layer addSublayer:self.screenCircle];
+        [self.layer addSublayer:self.originCircle];
     }
     return self;
 }

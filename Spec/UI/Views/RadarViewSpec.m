@@ -43,6 +43,39 @@ describe(@"RadarView", ^{
             assertThat(originCircle, is(notNilValue()));
         });
         
+        it(@"is assigned to view's layer", ^{
+            assertThat(originCircle.superlayer, is(equalTo(radarView.layer)));
+        });
+        
+        it(@"is round", ^{
+            assertThatFloat(originCircle.cornerRadius, closeTo(originCircle.bounds.size.width / 2, 0.001));
+        });
+        
+        it(@"has width 10", ^{
+            assertThatInt(originCircle.bounds.size.width, equalToInt(10));
+        });
+        
+        it(@"has height 10", ^{
+            assertThatInt(originCircle.bounds.size.height, equalToInt(10));
+        });
+        
+        it(@"has x position at view's center x", ^{
+            assertThatInt(originCircle.position.x, equalToInt(radarView.center.x));
+        });
+        
+        it(@"has y position at view's center y", ^{
+            assertThatInt(originCircle.position.y, equalToInt(radarView.center.y));
+        });
+        
+        it(@"has anchor point that makes its position its center", ^{
+            assertThatFloat(originCircle.anchorPoint.x, closeTo(0.5, 0.001));
+            assertThatFloat(originCircle.anchorPoint.y, closeTo(0.5, 0.001));
+        });
+        
+        it(@"has a green background", ^{
+            assertThat([UIColor colorWithCGColor:originCircle.backgroundColor], is(equalTo([UIColor greenColor])));
+        });
+        
     });
     
     describe(@"screenCircle layer", ^{
