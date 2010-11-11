@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50564DF6128B7A180000CC7D /* SpiritRadioAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50564DF5128B7A180000CC7D /* SpiritRadioAppDelegate.m */; };
+		50564F8E128B7D540000CC7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50564DE9128B79930000CC7D /* main.m */; };
+		50564F97128B7D800000CC7D /* SpiritRadioAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50564DF5128B7A180000CC7D /* SpiritRadioAppDelegate.m */; };
+		50564FDF128B81200000CC7D /* SpiritRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50564FDE128B81200000CC7D /* SpiritRadioViewController.m */; };
+		50564FE0128B81200000CC7D /* SpiritRadioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50564FDE128B81200000CC7D /* SpiritRadioViewController.m */; };
+		50565020128B83B00000CC7D /* SpiritRadioAppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5056501E128B83B00000CC7D /* SpiritRadioAppDelegateSpec.m */; };
+		AE26662B11EFB89800EE18BD /* MyModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE26662A11EFB89800EE18BD /* MyModelSpec.m */; };
+		AE26663311EFB93400EE18BD /* MyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE26663211EFB93400EE18BD /* MyModel.m */; };
+		AE26667711EFBAB100EE18BD /* Cedar-iPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE42792411EF992A00CFF331 /* Cedar-iPhone.framework */; };
+		AE26667811EFBAB100EE18BD /* OCHamcrest-iPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE42794311EF997500CFF331 /* OCHamcrest-iPhone.framework */; };
+		AE2667B211EFC2B000EE18BD /* OCMock-iPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2667B111EFC2B000EE18BD /* OCMock-iPhone.framework */; };
+		AE4277B711EF91AD00CFF331 /* OCHamcrest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4277B611EF91AD00CFF331 /* OCHamcrest.framework */; };
+		AE4277F911EF91FB00CFF331 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4277F811EF91FB00CFF331 /* OCMock.framework */; };
+		AE42780311EF921B00CFF331 /* Cedar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE42778911EF8FD600CFF331 /* Cedar.framework */; };
+		AE42781011EF929700CFF331 /* Cedar.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE42778911EF8FD600CFF331 /* Cedar.framework */; };
+		AE42781111EF929700CFF331 /* OCHamcrest.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE4277B611EF91AD00CFF331 /* OCHamcrest.framework */; };
+		AE42781211EF929700CFF331 /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AE4277F811EF91FB00CFF331 /* OCMock.framework */; };
+		AE4279F511EFB7A000CFF331 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4279F411EFB7A000CFF331 /* main.m */; };
+		AE427A0711EFB82600CFF331 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE427A0611EFB82600CFF331 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AE42781311EF92B600CFF331 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AE42781011EF929700CFF331 /* Cedar.framework in CopyFiles */,
+				AE42781111EF929700CFF331 /* OCHamcrest.framework in CopyFiles */,
+				AE42781211EF929700CFF331 /* OCMock.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32A70AAB03705E1F00C91783 /* Spirit_Radio_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spirit_Radio_Prefix.pch; sourceTree = "<group>"; };
+		50564DE9128B79930000CC7D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		50564DF4128B7A180000CC7D /* SpiritRadioAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiritRadioAppDelegate.h; sourceTree = "<group>"; };
+		50564DF5128B7A180000CC7D /* SpiritRadioAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiritRadioAppDelegate.m; sourceTree = "<group>"; };
+		50564E2D128B7BBF0000CC7D /* Spirit Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spirit Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50564E2F128B7BC00000CC7D /* Spirit Radio-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Spirit Radio-Info.plist"; sourceTree = "<group>"; };
+		50564FDD128B81200000CC7D /* SpiritRadioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiritRadioViewController.h; sourceTree = "<group>"; };
+		50564FDE128B81200000CC7D /* SpiritRadioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiritRadioViewController.m; sourceTree = "<group>"; };
+		5056501E128B83B00000CC7D /* SpiritRadioAppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiritRadioAppDelegateSpec.m; sourceTree = "<group>"; };
+		AE26662A11EFB89800EE18BD /* MyModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModelSpec.m; sourceTree = "<group>"; };
+		AE26663111EFB93400EE18BD /* MyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyModel.h; sourceTree = "<group>"; };
+		AE26663211EFB93400EE18BD /* MyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModel.m; sourceTree = "<group>"; };
+		AE2667B111EFC2B000EE18BD /* OCMock-iPhone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "OCMock-iPhone.framework"; sourceTree = "<group>"; };
+		AE42778911EF8FD600CFF331 /* Cedar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Cedar.framework; sourceTree = "<group>"; };
+		AE4277AC11EF914F00CFF331 /* Specs */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "compiled.mach-o.executable"; path = Specs; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4277B611EF91AD00CFF331 /* OCHamcrest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCHamcrest.framework; sourceTree = "<group>"; };
+		AE4277F811EF91FB00CFF331 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
+		AE42792411EF992A00CFF331 /* Cedar-iPhone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "Cedar-iPhone.framework"; sourceTree = "<group>"; };
+		AE42794311EF997500CFF331 /* OCHamcrest-iPhone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "OCHamcrest-iPhone.framework"; sourceTree = "<group>"; };
+		AE4279BA11EFB64F00CFF331 /* UISpecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISpecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4279BC11EFB65000CFF331 /* UISpecs-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UISpecs-Info.plist"; sourceTree = "<group>"; };
+		AE4279F411EFB7A000CFF331 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE427A0611EFB82600CFF331 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50564E2B128B7BBF0000CC7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4277AA11EF914F00CFF331 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE42780311EF921B00CFF331 /* Cedar.framework in Frameworks */,
+				AE4277B711EF91AD00CFF331 /* OCHamcrest.framework in Frameworks */,
+				AE4277F911EF91FB00CFF331 /* OCMock.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4279B811EFB64F00CFF331 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE26667711EFBAB100EE18BD /* Cedar-iPhone.framework in Frameworks */,
+				AE26667811EFBAB100EE18BD /* OCHamcrest-iPhone.framework in Frameworks */,
+				AE2667B211EFC2B000EE18BD /* OCMock-iPhone.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* Spirit Radio */ = {
+			isa = PBXGroup;
+			children = (
+				AE42775B11EF8C6700CFF331 /* App */,
+				AE42775E11EF8C6B00CFF331 /* Spec */,
+				AE42778811EF8FD600CFF331 /* Externals */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+				AE4279BC11EFB65000CFF331 /* UISpecs-Info.plist */,
+				50564E2F128B7BC00000CC7D /* Spirit Radio-Info.plist */,
+			);
+			name = "Spirit Radio";
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE4277AC11EF914F00CFF331 /* Specs */,
+				AE4279BA11EFB64F00CFF331 /* UISpecs.app */,
+				50564E2D128B7BBF0000CC7D /* Spirit Radio.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50564DED128B79DA0000CC7D /* Application Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				50564DF4128B7A180000CC7D /* SpiritRadioAppDelegate.h */,
+				50564DF5128B7A180000CC7D /* SpiritRadioAppDelegate.m */,
+			);
+			path = "Application Delegates";
+			sourceTree = "<group>";
+		};
+		50565013128B83330000CC7D /* Application Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				5056501E128B83B00000CC7D /* SpiritRadioAppDelegateSpec.m */,
+			);
+			path = "Application Delegates";
+			sourceTree = "<group>";
+		};
+		50565014128B833A0000CC7D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				50564FDD128B81200000CC7D /* SpiritRadioViewController.h */,
+				50564FDE128B81200000CC7D /* SpiritRadioViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AE26662C11EFB8B900EE18BD /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AE26662D11EFB8F900EE18BD /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AE26662D11EFB8F900EE18BD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AE26663111EFB93400EE18BD /* MyModel.h */,
+				AE26663211EFB93400EE18BD /* MyModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AE42775B11EF8C6700CFF331 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				50564DE9128B79930000CC7D /* main.m */,
+				AE26662C11EFB8B900EE18BD /* Domain */,
+				AE42797811EFB31C00CFF331 /* UI */,
+				32A70AAB03705E1F00C91783 /* Spirit_Radio_Prefix.pch */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AE42775E11EF8C6B00CFF331 /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				AE4279F211EFB70300CFF331 /* Domain */,
+				AE42797411EFB1D500CFF331 /* UI */,
+			);
+			path = Spec;
+			sourceTree = "<group>";
+		};
+		AE42778811EF8FD600CFF331 /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				AE2667B111EFC2B000EE18BD /* OCMock-iPhone.framework */,
+				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
+				AE42778911EF8FD600CFF331 /* Cedar.framework */,
+				AE4277B611EF91AD00CFF331 /* OCHamcrest.framework */,
+				AE4277F811EF91FB00CFF331 /* OCMock.framework */,
+				AE42792411EF992A00CFF331 /* Cedar-iPhone.framework */,
+				AE42794311EF997500CFF331 /* OCHamcrest-iPhone.framework */,
+			);
+			path = Externals;
+			sourceTree = "<group>";
+		};
+		AE42797411EFB1D500CFF331 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				50565013128B83330000CC7D /* Application Delegates */,
+				AE42797711EFB2FD00CFF331 /* Views */,
+				AE4279F411EFB7A000CFF331 /* main.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AE42797711EFB2FD00CFF331 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AE42797811EFB31C00CFF331 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				50565014128B833A0000CC7D /* View Controllers */,
+				50564DED128B79DA0000CC7D /* Application Delegates */,
+				AE42798111EFB3DC00CFF331 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AE42798111EFB3DC00CFF331 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AE4279F211EFB70300CFF331 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AE4279F311EFB72E00CFF331 /* Models */,
+				AE427A0611EFB82600CFF331 /* main.m */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		AE4279F311EFB72E00CFF331 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AE26662A11EFB89800EE18BD /* MyModelSpec.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50564E2C128B7BBF0000CC7D /* Spirit Radio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50564E32128B7BC10000CC7D /* Build configuration list for PBXNativeTarget "Spirit Radio" */;
+			buildPhases = (
+				50564E29128B7BBF0000CC7D /* Resources */,
+				50564E2A128B7BBF0000CC7D /* Sources */,
+				50564E2B128B7BBF0000CC7D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Spirit Radio";
+			productName = "Spirit Radio";
+			productReference = 50564E2D128B7BBF0000CC7D /* Spirit Radio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AE4277AB11EF914F00CFF331 /* Specs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE4277B511EF918900CFF331 /* Build configuration list for PBXNativeTarget "Specs" */;
+			buildPhases = (
+				AE4277A911EF914F00CFF331 /* Sources */,
+				AE4277AA11EF914F00CFF331 /* Frameworks */,
+				AE42781311EF92B600CFF331 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Specs;
+			productName = Specs;
+			productReference = AE4277AC11EF914F00CFF331 /* Specs */;
+			productType = "com.apple.product-type.tool";
+		};
+		AE4279B911EFB64F00CFF331 /* UISpecs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE4279BF11EFB65000CFF331 /* Build configuration list for PBXNativeTarget "UISpecs" */;
+			buildPhases = (
+				AE4279B611EFB64F00CFF331 /* Resources */,
+				AE4279B711EFB64F00CFF331 /* Sources */,
+				AE4279B811EFB64F00CFF331 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UISpecs;
+			productName = UISpecs;
+			productReference = AE4279BA11EFB64F00CFF331 /* UISpecs.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "Spirit Radio" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* Spirit Radio */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE4277AB11EF914F00CFF331 /* Specs */,
+				AE4279B911EFB64F00CFF331 /* UISpecs */,
+				50564E2C128B7BBF0000CC7D /* Spirit Radio */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50564E29128B7BBF0000CC7D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4279B611EFB64F00CFF331 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50564E2A128B7BBF0000CC7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50564F97128B7D800000CC7D /* SpiritRadioAppDelegate.m in Sources */,
+				50564F8E128B7D540000CC7D /* main.m in Sources */,
+				50564FDF128B81200000CC7D /* SpiritRadioViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4277A911EF914F00CFF331 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE427A0711EFB82600CFF331 /* main.m in Sources */,
+				AE26662B11EFB89800EE18BD /* MyModelSpec.m in Sources */,
+				AE26663311EFB93400EE18BD /* MyModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE4279B711EFB64F00CFF331 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE4279F511EFB7A000CFF331 /* main.m in Sources */,
+				50564DF6128B7A180000CC7D /* SpiritRadioAppDelegate.m in Sources */,
+				50564FE0128B81200000CC7D /* SpiritRadioViewController.m in Sources */,
+				50565020128B83B00000CC7D /* SpiritRadioAppDelegateSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB927908733DD40010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB927A08733DD40010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		50564E30128B7BC00000CC7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "Spirit Radio-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Spirit Radio";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		50564E31128B7BC00000CC7D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "Spirit Radio-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Spirit Radio";
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		AE4277AE11EF914F00CFF331 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Specs;
+			};
+			name = Debug;
+		};
+		AE4277AF11EF914F00CFF331 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Specs;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		AE4279BD11EFB65000CFF331 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "UISpecs-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lstdc++",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UISpecs;
+				SDKROOT = iphonesimulator4.0;
+			};
+			name = Debug;
+		};
+		AE4279BE11EFB65000CFF331 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Externals\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "UISpecs-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lstdc++",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = UISpecs;
+				SDKROOT = iphonesimulator4.0;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "Spirit Radio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB927908733DD40010E9CD /* Debug */,
+				1DEB927A08733DD40010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50564E32128B7BC10000CC7D /* Build configuration list for PBXNativeTarget "Spirit Radio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50564E30128B7BC00000CC7D /* Debug */,
+				50564E31128B7BC00000CC7D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE4277B511EF918900CFF331 /* Build configuration list for PBXNativeTarget "Specs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE4277AE11EF914F00CFF331 /* Debug */,
+				AE4277AF11EF914F00CFF331 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE4279BF11EFB65000CFF331 /* Build configuration list for PBXNativeTarget "UISpecs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE4279BD11EFB65000CFF331 /* Debug */,
+				AE4279BE11EFB65000CFF331 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
