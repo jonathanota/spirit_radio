@@ -11,8 +11,10 @@
 
 @interface RadarView : UIView {
     CALayer *mScreenCircle;
+    CALayer *mOriginCircle;
 }
 
 @property (readonly) CALayer *screenCircle;
+@property (readonly) CALayer *originCircle;
 
 @end

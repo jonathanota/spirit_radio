@@ -31,6 +31,20 @@ describe(@"RadarView", ^{
         assertThatBool(radarView.autoresizesSubviews, equalToBool(YES));
     });
     
+    describe(@"originCircle layer", ^{
+        
+        __block CALayer *originCircle;
+        
+        beforeEach(^{
+            originCircle = radarView.originCircle;
+        });
+        
+        it(@"exists", ^{
+            assertThat(originCircle, is(notNilValue()));
+        });
+        
+    });
+    
     describe(@"screenCircle layer", ^{
         
         __block CALayer *screenCircle;

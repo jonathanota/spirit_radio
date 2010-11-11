@@ -24,6 +24,13 @@
     return mScreenCircle;
 }
 
+- (CALayer *) originCircle {
+    if (!mOriginCircle) {
+        mOriginCircle = [[CALayer layer] retain];
+    }
+    return mOriginCircle;
+}
+
 - (id)initWithFrame:(CGRect)frame {
     
     self = [super initWithFrame:frame];
@@ -43,6 +50,7 @@
 
 - (void)dealloc {
     [mScreenCircle release];
+    [mOriginCircle release];
     
     [super dealloc];
 }
