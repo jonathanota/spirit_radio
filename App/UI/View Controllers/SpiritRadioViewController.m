@@ -73,6 +73,8 @@
 
 
 - (void)dealloc {
+    [mRadarView release];
+    
     [super dealloc];
 }
 
