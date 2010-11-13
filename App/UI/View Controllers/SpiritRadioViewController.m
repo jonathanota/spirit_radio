@@ -9,6 +9,7 @@
 #import "SpiritRadioViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 #import "RadarView.h"
 
@@ -45,6 +46,45 @@
     self = [super init];
     if (self) {
         [self.view addSubview:self.radarView];
+        
+//        [OALSimpleAudio sharedInstanceWithSources:32];
+        
+//        BOOL source_available = [[OpenALSoundController sharedSoundController] reserveSource:&backgroundMusicSourceID];
+//        if(YES == source_available)
+//        {
+//            backgroundMusicStreamBufferData = [[EWStreamBufferData alloc] initFromFileBaseName:@"D-ay-Z-ray_mix_090502"];
+//            backgroundMusicStreamBufferData.audioLooping = YES;
+//            
+//            [[OpenALSoundController sharedSoundController] setSourceGain:0.50 sourceID:backgroundMusicSourceID];		
+//            [[OpenALSoundController sharedSoundController] playStream:backgroundMusicSourceID streamBufferData:backgroundMusicStreamBufferData];		
+//        }
+//        else
+//        {
+//            NSLog(@"Unexpected Error: No AL source available for background music");
+//        }
+        
+//        staticSource = [[ALSource source]retain];
+//        ALBuffer *staticBuffer = [[[OALAudioSupport sharedInstance] bufferFromFile:@"static.wav"] retain];    
+//        staticSource.gain = 0;
+//        [staticSource play:staticBuffer loop:YES];
+//        
+//        source.position = alpoint(0, 0, 0);
+//        source.referenceDistance = 40;
+//        source.gain = 1.0;
+//        
+//        [OpenALManager sharedInstance].currentContext.distanceModel = AL_EXPONENT_DISTANCE;
+//        
+//        [OpenALManager sharedInstance].currentContext.listener.position = alpoint(0, 0, 0);
+        
+        noisePlayer = [[MPMoviePlayerController alloc] initWithContentURL:[[NSBundle mainBundle] URLForResource:@"noise_compressed" withExtension:@"mp4"]];
+        noisePlayer.view.frame = self.view.bounds;
+        noisePlayer.shouldAutoplay = YES;
+        noisePlayer.controlStyle = MPMovieControlStyleNone;
+        noisePlayer.repeatMode = MPMovieRepeatModeOne;
+        noisePlayer.view.alpha = 0.1;
+        [self.view addSubview:noisePlayer.view];
+        [noisePlayer play];
+        
     }
     return self;
 }
@@ -56,8 +96,37 @@
 */
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {    
+- (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [OALSimpleAudio sharedInstanceWithSources:32];
+    
+    staticSource = [[ALSource source]retain];
+    ALBuffer *staticBuffer = [[[OALAudioSupport sharedInstance] bufferFromFile:@"static.wav"] retain];    
+    staticSource.gain = 0;
+    [staticSource play:staticBuffer loop:YES];
+    
+    ALSource *source = [[ALSource source]retain];
+    ALBuffer *buffer = [[[OALAudioSupport sharedInstance] bufferFromFile:@"spooky.wav"] retain];
+    //40441684, -79942748
+    source.position = alpoint(40441684, -79942748, 0);
+    source.referenceDistance = 5.0;
+    source.rolloffFactor = 5.0;
+    source.coneOuterGain = 0.0;
+    source.gain = 1;
+    [source play:buffer loop:YES];
+    
+    sources = [[NSMutableArray alloc] init];
+//    [sources addObject:source];
+    
+    self.radarView.source = source;
+    
+    [OpenALManager sharedInstance].currentContext.distanceModel = AL_EXPONENT_DISTANCE;
+}
+
+- (void) setStatic:(CGFloat)amount {
+    staticSource.gain = amount;
+    noisePlayer.view.alpha = amount;
 }
 
 /*

@@ -8,6 +8,8 @@
 
 #import "SpiritRadioAppDelegate.h"
 
+#import <CoreLocation/CoreLocation.h>
+
 #import "SpiritRadioViewController.h"
 #import "RadarView.h"
 
@@ -38,6 +40,17 @@
 
 - (void) updateViews {
     self.radioViewController.radarView.originOrientation = mRadians;
+    self.radioViewController.radarView.originCoord = mOrigin;
+    
+    [OpenALManager sharedInstance].currentContext.listener.orientation = alorientation(cos(mRadians), sin(mRadians), 0, 0, 0, 1);
+    
+    CGFloat num = gpsAcc/55.0/2.0 + headingWrong/2.0;
+    num = MIN(num, 1);
+    num = MAX(num, 0);
+    if(num < 0.2) num = 0;
+    
+//    [self.radioViewController setStatic:num];
+    [self.radioViewController setStatic:0];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
@@ -55,6 +68,19 @@
 - (void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
     CLLocationDirection heading = newHeading.trueHeading;
     mRadians = (90.0 - heading) * (M_PI/180.0);
+    
+    headingWrong = newHeading.headingAccuracy < 0;
+    
+}
+
+- (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    mOrigin = CGPointMake(newLocation.coordinate.latitude * pow(10, 6), newLocation.coordinate.longitude * pow(10, 6));
+    [OpenALManager sharedInstance].currentContext.listener.position = alpoint(mOrigin.x, mOrigin.y, 0);
+    
+    NSLog(@"%@", [NSString stringWithFormat:@"%f, %f\n%f", mOrigin.x, mOrigin.y, newLocation.horizontalAccuracy]);
+    self.radioViewController.radarView.originCoord = mOrigin;
+    
+    gpsAcc = newLocation.horizontalAccuracy;
 }
 
 

@@ -18,6 +18,10 @@
     CLLocationManager *locationManager;
     
     CGFloat mRadians;
+    CGPoint mOrigin;
+    
+    BOOL headingWrong;
+    CGFloat gpsAcc;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
