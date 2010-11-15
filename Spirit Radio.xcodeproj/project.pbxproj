@@ -39,6 +39,15 @@
 		5056569B128BDDD30000CC7D /* ColdFunk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 50565699128BDDD30000CC7D /* ColdFunk.wav */; };
 		505656C7128BE6130000CC7D /* AudioManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 505656C6128BE6130000CC7D /* AudioManager.mm */; };
 		505656C8128BE6130000CC7D /* AudioManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 505656C6128BE6130000CC7D /* AudioManager.mm */; };
+		505E9751128F5C750009690D /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 505E9750128F5C750009690D /* dot.png */; };
+		505E9752128F5C750009690D /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 505E9750128F5C750009690D /* dot.png */; };
+		505E9761128F5DDB0009690D /* laugh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 505E9760128F5DDB0009690D /* laugh.wav */; };
+		505E9762128F5DDB0009690D /* laugh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 505E9760128F5DDB0009690D /* laugh.wav */; };
+		505E9872128F8F3F0009690D /* EWStreamBufferData.m in Sources */ = {isa = PBXBuildFile; fileRef = 505E9871128F8F3F0009690D /* EWStreamBufferData.m */; };
+		505E9884128F8F930009690D /* OpenALSupport.c in Sources */ = {isa = PBXBuildFile; fileRef = 505E9883128F8F930009690D /* OpenALSupport.c */; };
+		505E9885128F8F930009690D /* OpenALSupport.c in Sources */ = {isa = PBXBuildFile; fileRef = 505E9883128F8F930009690D /* OpenALSupport.c */; };
+		505E9903128F98540009690D /* librarian.wav in Resources */ = {isa = PBXBuildFile; fileRef = 505E9902128F98540009690D /* librarian.wav */; };
+		505E9904128F98540009690D /* librarian.wav in Resources */ = {isa = PBXBuildFile; fileRef = 505E9902128F98540009690D /* librarian.wav */; };
 		50B937A5128BFA9500CBF2E1 /* SceneObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B937A4128BFA9500CBF2E1 /* SceneObject.m */; };
 		50B937A6128BFA9500CBF2E1 /* SceneObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B937A4128BFA9500CBF2E1 /* SceneObject.m */; };
 		50B9395A128C11F800CBF2E1 /* OALAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B93924128C11F800CBF2E1 /* OALAction.m */; };
@@ -151,6 +160,13 @@
 		50565699128BDDD30000CC7D /* ColdFunk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ColdFunk.wav; sourceTree = "<group>"; };
 		505656C5128BE6130000CC7D /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
 		505656C6128BE6130000CC7D /* AudioManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioManager.mm; sourceTree = "<group>"; };
+		505E9750128F5C750009690D /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
+		505E9760128F5DDB0009690D /* laugh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laugh.wav; sourceTree = "<group>"; };
+		505E9870128F8F3F0009690D /* EWStreamBufferData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWStreamBufferData.h; sourceTree = "<group>"; };
+		505E9871128F8F3F0009690D /* EWStreamBufferData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWStreamBufferData.m; sourceTree = "<group>"; };
+		505E9882128F8F930009690D /* OpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenALSupport.h; sourceTree = "<group>"; };
+		505E9883128F8F930009690D /* OpenALSupport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OpenALSupport.c; sourceTree = "<group>"; };
+		505E9902128F98540009690D /* librarian.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = librarian.wav; sourceTree = "<group>"; };
 		50B937A3128BFA9500CBF2E1 /* SceneObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneObject.h; sourceTree = "<group>"; };
 		50B937A4128BFA9500CBF2E1 /* SceneObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneObject.m; sourceTree = "<group>"; };
 		50B93923128C11F800CBF2E1 /* OALAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OALAction.h; sourceTree = "<group>"; };
@@ -333,6 +349,7 @@
 		50565425128BAD540000CC7D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				505E9750128F5C750009690D /* dot.png */,
 				50565584128BD3D70000CC7D /* noise_compressed.mp4 */,
 				505654D3128BB8DF0000CC7D /* background@2x.png */,
 				5056542C128BAD700000CC7D /* radar.png */,
@@ -343,6 +360,8 @@
 		50565687128BDDB60000CC7D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				505E9902128F98540009690D /* librarian.wav */,
+				505E9760128F5DDB0009690D /* laugh.wav */,
 				50B93A16128C1F1600CBF2E1 /* static.wav */,
 				50B93A13128C1EE000CBF2E1 /* spooky.wav */,
 				50565699128BDDD30000CC7D /* ColdFunk.wav */,
@@ -432,6 +451,10 @@
 				50B93950128C11F800CBF2E1 /* ALWrapper.m */,
 				50B93951128C11F800CBF2E1 /* OpenALManager.h */,
 				50B93952128C11F800CBF2E1 /* OpenALManager.m */,
+				505E9882128F8F930009690D /* OpenALSupport.h */,
+				505E9883128F8F930009690D /* OpenALSupport.c */,
+				505E9870128F8F3F0009690D /* EWStreamBufferData.h */,
+				505E9871128F8F3F0009690D /* EWStreamBufferData.m */,
 			);
 			path = OpenAL;
 			sourceTree = "<group>";
@@ -661,6 +684,9 @@
 				50B93963128C11F800CBF2E1 /* LICENSE.ObjectAL.txt in Resources */,
 				50B93A14128C1EE000CBF2E1 /* spooky.wav in Resources */,
 				50B93A17128C1F1600CBF2E1 /* static.wav in Resources */,
+				505E9751128F5C750009690D /* dot.png in Resources */,
+				505E9761128F5DDB0009690D /* laugh.wav in Resources */,
+				505E9904128F98540009690D /* librarian.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +703,9 @@
 				50B9397A128C11F800CBF2E1 /* LICENSE.ObjectAL.txt in Resources */,
 				50B93A15128C1EE000CBF2E1 /* spooky.wav in Resources */,
 				50B93A18128C1F1600CBF2E1 /* static.wav in Resources */,
+				505E9752128F5C750009690D /* dot.png in Resources */,
+				505E9762128F5DDB0009690D /* laugh.wav in Resources */,
+				505E9903128F98540009690D /* librarian.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +744,8 @@
 				50B9396E128C11F800CBF2E1 /* OpenALManager.m in Sources */,
 				50B9396F128C11F800CBF2E1 /* mach_timing.c in Sources */,
 				50B93970128C11F800CBF2E1 /* NSMutableArray+WeakReferences.m in Sources */,
+				505E9872128F8F3F0009690D /* EWStreamBufferData.m in Sources */,
+				505E9885128F8F930009690D /* OpenALSupport.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,6 +794,7 @@
 				50B93985128C11F800CBF2E1 /* OpenALManager.m in Sources */,
 				50B93986128C11F800CBF2E1 /* mach_timing.c in Sources */,
 				50B93987128C11F800CBF2E1 /* NSMutableArray+WeakReferences.m in Sources */,
+				505E9884128F8F930009690D /* OpenALSupport.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

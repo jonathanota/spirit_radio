@@ -25,9 +25,17 @@
     
     NSMutableArray *sources;
     MPMoviePlayerController *noisePlayer;
+    
+    UILabel *debugLabel;
+    
+    ALSource *source2;
+    
+    EWStreamBufferData *coolBufferData;
 }
 
 @property (readonly) RadarView *radarView;
+@property (readonly) UILabel *debugLabel;
+@property (readonly) ALSource *source2;
 
 - (void) setStatic:(CGFloat)amount;
 

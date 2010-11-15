@@ -25,6 +25,10 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
+- (void) resetButtonPressed:(id)sender {
+    self.radioViewController.source2.position = alpoint(mOrigin.x, mOrigin.y, 0);
+}
+
 - (id) init {
     self = [super init];
     if (self) {
@@ -32,6 +36,12 @@
         
         self.radioViewController = [[SpiritRadioViewController alloc] init];
         [self.window addSubview:self.radioViewController.view];
+        
+        UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        resetButton.frame = CGRectMake(170, 20, 75, 75);
+        resetButton.titleLabel.text = @"Set Location";
+        [resetButton addTarget:self action:@selector(resetButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [self.window addSubview:resetButton];
         
         [NSTimer scheduledTimerWithTimeInterval:(1.0/60.0) target:self selector:@selector(updateViews) userInfo:nil repeats:YES];
     }
@@ -47,10 +57,12 @@
     CGFloat num = gpsAcc/55.0/2.0 + headingWrong/2.0;
     num = MIN(num, 1);
     num = MAX(num, 0);
-    if(num < 0.2) num = 0;
+    if(num < 0.1) num = 0;
     
-//    [self.radioViewController setStatic:num];
-    [self.radioViewController setStatic:0];
+    [self.radioViewController setStatic:num];
+//    [self.radioViewController setStatic:0];
+    
+    self.radioViewController.debugLabel.text = [NSString stringWithFormat:@"lat: %d\nlon: %d\nacc: %d\nhead: %d", (int) mOrigin.x, (int)mOrigin.y,(int) gpsAcc, (int) (mRadians*(180.0/M_PI))];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
@@ -77,7 +89,6 @@
     mOrigin = CGPointMake(newLocation.coordinate.latitude * pow(10, 6), newLocation.coordinate.longitude * pow(10, 6));
     [OpenALManager sharedInstance].currentContext.listener.position = alpoint(mOrigin.x, mOrigin.y, 0);
     
-    NSLog(@"%@", [NSString stringWithFormat:@"%f, %f\n%f", mOrigin.x, mOrigin.y, newLocation.horizontalAccuracy]);
     self.radioViewController.radarView.originCoord = mOrigin;
     
     gpsAcc = newLocation.horizontalAccuracy;

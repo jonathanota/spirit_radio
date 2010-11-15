@@ -47,10 +47,10 @@
 - (CALayer *) sourceLayer {
     if (!sourceLayer) {
         sourceLayer = [[CALayer layer] retain];
-        sourceLayer.bounds = CGRectMake(0, 0, 10, 10);
+        sourceLayer.bounds = CGRectMake(0, 0, 16, 16);
         sourceLayer.cornerRadius = mOriginCircle.bounds.size.width / 2;
-        sourceLayer.position = CGPointMake(source.position.x, source.position.y);
-        sourceLayer.backgroundColor = [UIColor greenColor].CGColor;
+        sourceLayer.contents = [UIImage imageNamed:@"dot"].CGImage;
+        sourceLayer.opaque = NO;
         [self.layer addSublayer:sourceLayer];
     }
     return sourceLayer;
@@ -62,35 +62,28 @@
 
 - (void) setOriginCoord:(CGPoint)newCoord {
     originCoord = newCoord;
-    
-//    for (ALSource *source in sources) {
-//        CALayer *layer = (CALayer *)[self.dict objectForKey:source];
+            
+    CGPoint sourcePosition = CGPointMake(source.position.x, source.position.y);
         
-        CGPoint p0 = CGPointMake(source.position.x, source.position.y);
-        
-        CGAffineTransform t1 = CGAffineTransformMakeTranslation(-originCoord.x, -originCoord.y);
-        CGPoint pt1 = CGPointApplyAffineTransform(p0, t1);
-
-    CGPoint pt4;
+    CGAffineTransform transformRelativeOrigin = CGAffineTransformMakeTranslation(-originCoord.x, -originCoord.y);
     
-    CGFloat y = -1;
-    CGFloat x = -1;
+    CGPoint sourceRelativeOrigin = CGPointApplyAffineTransform(sourcePosition, transformRelativeOrigin);
     
+    CGFloat x = sourceRelativeOrigin.x;
+    CGFloat y = sourceRelativeOrigin.y;
     
     // bleh if x=0
-    CGFloat r = -2.0 / ( exp( sqrt(x*x+y*y)/20.0 ) + 1.0 ) + 1.0;
+    CGFloat intensity = 1.0 / ( exp( (sqrt(x*x+y*y)-200)/200.0 ) + 1.0 );
+    CGFloat r = 1.0 - intensity;
     CGFloat t = atan2(y,x);
     
-    pt4 = CGPointMake(self.bounds.size.width/2 * r*cos(t), self.bounds.size.width/2 * r*sin(t));
+    CGPoint pointLogScaled = CGPointMake(self.bounds.size.width/2 * -r*cos(t), self.bounds.size.width/2 * -r*sin(t));
     
-    pt4  = CGPointMake(0, 0);
+    CGAffineTransform centerTransform = CGAffineTransformMakeTranslation(self.bounds.size.width/2, self.bounds.size.height/2);
+    CGPoint pointScaledCentered = CGPointApplyAffineTransform(pointLogScaled, centerTransform);
     
-    CGAffineTransform t5 = CGAffineTransformMakeTranslation(self.bounds.size.width/2, self.bounds.size.height/2);
-    CGPoint pt5 = CGPointApplyAffineTransform(pt4, t5);
-    
-        NSLog(@"%f, %f, %f %f, %f, %f -- %f", r*cos(t), r*sin(t), pt4.x, pt4.y, pt5.x, pt5.y, self.bounds.size.width);
-    
-    self.sourceLayer.position = CGPointMake(-160, -160);
+    self.sourceLayer.position = pointScaledCentered;
+    self.sourceLayer.opacity = intensity;
 }
 
 - (void) setOriginOrientation:(CGFloat)newOrientation {
