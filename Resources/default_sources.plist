@@ -2,15 +2,15 @@
 	{
 		"Base Name" = ColdFunk;
 		Position = {
-			x = 100;
-			y = 0;
+			x = 40443636;
+			y = "-79944048";
 			z = 0;
 		};
 	},
 	{
 		"Base Name" = laugh;
 		Position = {
-			x = -100;
+			x = "-100";
 			y = 0;
 			z = 0;
 		};
@@ -18,8 +18,8 @@
 	{
 		"Base Name" = librarian;
 		Position = {
-			x = -50;
-			y = -100;
+			x = "-50";
+			y = "-100";
 			z = 0;
 		};
 	},
