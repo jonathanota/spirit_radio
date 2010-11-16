@@ -15,4 +15,12 @@
 			z = 0;
 		};
 	},
+	{
+		"Base Name" = laugh;
+		Position = {
+			x = 0;
+			y = 0;
+			z = 0;
+		};
+	},
 )

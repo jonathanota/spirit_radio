@@ -77,7 +77,7 @@
             CGFloat y = sourceRelativeOrigin.y;
             
             // bleh if x=0
-            CGFloat intensity = 1.0 / ( exp( (sqrt(x*x+y*y)-200)/200.0 ) + 1.0 );
+            CGFloat intensity = 1.0 / ( exp( (sqrt(x*x+y*y)-200)/200.0 + 1.0 ) );
             CGFloat r = 1.0 - intensity;
             CGFloat t;
             if (x!=0) {
