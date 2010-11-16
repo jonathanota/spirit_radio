@@ -111,7 +111,6 @@
     noisePlayer.shouldAutoplay = YES;
     noisePlayer.controlStyle = MPMovieControlStyleNone;
     noisePlayer.repeatMode = MPMovieRepeatModeOne;
-    noisePlayer.view.alpha = 0.1;
     [self.view addSubview:noisePlayer.view];
     [noisePlayer play];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieStateChanged:) name:MPMoviePlayerPlaybackStateDidChangeNotification object:noisePlayer];
