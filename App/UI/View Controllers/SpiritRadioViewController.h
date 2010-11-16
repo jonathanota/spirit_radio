@@ -27,6 +27,9 @@
     
     ALSource *mySource;
     EWStreamBufferData *coolBufferData;
+    
+    ALSource *source2;
+    EWStreamBufferData *buffer2;
 }
 
 @property (readonly) RadarView *radarView;

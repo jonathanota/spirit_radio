@@ -60,6 +60,7 @@
 
 - (void) updateQueue {
     [coolBufferData updateQueue:mySource.sourceId];
+    [buffer2 updateQueue:source2.sourceId];
 }
 
 - (void)viewDidLoad {
@@ -85,6 +86,14 @@
     mySource.position = alpoint(100,0,0);
     mySource.referenceDistance = 50;
     mySource.rolloffFactor = 20;
+    
+    source2 = [[ALSource source] retain];
+    buffer2 = [[EWStreamBufferData streamBufferDataFromFileBaseName:@"laugh"] retain];
+    buffer2.audioLooping = YES;
+    
+    source2.position = alpoint(-100,0,0);
+    source2.referenceDistance = 50;
+    source2.rolloffFactor = 20;
     
     [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(updateQueue) userInfo:nil repeats:YES];
 }
