@@ -103,6 +103,8 @@
     [self.view addSubview:noisePlayer.view];
     [noisePlayer play];
     
+    [OALAudioSupport sharedInstance].allowIpod = NO;
+    
     [OALSimpleAudio sharedInstanceWithSources:32];
     
     self.sources = [self defaultSources];
