@@ -89,6 +89,10 @@
     }
 }
 
+- (void) movieStateChanged:(NSNotification *)notification {
+    [noisePlayer play];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -102,6 +106,7 @@
     noisePlayer.view.alpha = 0.1;
     [self.view addSubview:noisePlayer.view];
     [noisePlayer play];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieStateChanged:) name:MPMoviePlayerPlaybackStateDidChangeNotification object:noisePlayer];
     
     [OALAudioSupport sharedInstance].allowIpod = NO;
     
