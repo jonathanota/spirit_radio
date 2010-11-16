@@ -65,6 +65,10 @@
 		505E9C0A12922E530009690D /* default_sources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 505E9C0812922E530009690D /* default_sources.plist */; };
 		505E9C5E1292350D0009690D /* demo_sources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 505E9C5D1292350D0009690D /* demo_sources.plist */; };
 		505E9C5F1292350D0009690D /* demo_sources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 505E9C5D1292350D0009690D /* demo_sources.plist */; };
+		506F85F01292956B0026B9E6 /* dance.wav in Resources */ = {isa = PBXBuildFile; fileRef = 506F85EE1292956B0026B9E6 /* dance.wav */; };
+		506F85F11292956B0026B9E6 /* foundry2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 506F85EF1292956B0026B9E6 /* foundry2.wav */; };
+		506F85F21292956B0026B9E6 /* dance.wav in Resources */ = {isa = PBXBuildFile; fileRef = 506F85EE1292956B0026B9E6 /* dance.wav */; };
+		506F85F31292956B0026B9E6 /* foundry2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 506F85EF1292956B0026B9E6 /* foundry2.wav */; };
 		50B9395A128C11F800CBF2E1 /* OALAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B93924128C11F800CBF2E1 /* OALAction.m */; };
 		50B9395B128C11F800CBF2E1 /* OALActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B93926128C11F800CBF2E1 /* OALActionManager.m */; };
 		50B9395C128C11F800CBF2E1 /* OALAudioActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B93928128C11F800CBF2E1 /* OALAudioActions.m */; };
@@ -183,6 +187,8 @@
 		505E9883128F8F930009690D /* OpenALSupport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OpenALSupport.c; sourceTree = "<group>"; };
 		505E9C0812922E530009690D /* default_sources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = default_sources.plist; sourceTree = "<group>"; };
 		505E9C5D1292350D0009690D /* demo_sources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = demo_sources.plist; sourceTree = "<group>"; };
+		506F85EE1292956B0026B9E6 /* dance.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dance.wav; sourceTree = "<group>"; };
+		506F85EF1292956B0026B9E6 /* foundry2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = foundry2.wav; sourceTree = "<group>"; };
 		50B93923128C11F800CBF2E1 /* OALAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OALAction.h; sourceTree = "<group>"; };
 		50B93924128C11F800CBF2E1 /* OALAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OALAction.m; sourceTree = "<group>"; };
 		50B93925128C11F800CBF2E1 /* OALActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OALActionManager.h; sourceTree = "<group>"; };
@@ -379,6 +385,8 @@
 		50565687128BDDB60000CC7D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				506F85EE1292956B0026B9E6 /* dance.wav */,
+				506F85EF1292956B0026B9E6 /* foundry2.wav */,
 				5019807B1292816D0021B273 /* bisegna.wav */,
 				5019807C129281730021B273 /* drama.wav */,
 				5019807D129281740021B273 /* foundry.wav */,
@@ -708,6 +716,8 @@
 				5019808D1292817C0021B273 /* kobus.wav in Resources */,
 				5019808E1292817C0021B273 /* penka.wav in Resources */,
 				5019808F1292817C0021B273 /* sninsky.wav in Resources */,
+				506F85F21292956B0026B9E6 /* dance.wav in Resources */,
+				506F85F31292956B0026B9E6 /* foundry2.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +742,8 @@
 				501980861292817C0021B273 /* kobus.wav in Resources */,
 				501980871292817C0021B273 /* penka.wav in Resources */,
 				501980881292817C0021B273 /* sninsky.wav in Resources */,
+				506F85F01292956B0026B9E6 /* dance.wav in Resources */,
+				506F85F11292956B0026B9E6 /* foundry2.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
