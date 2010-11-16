@@ -15,50 +15,98 @@
 @implementation RadarView
 
 @synthesize originOrientation = mOriginOrientation;
-@synthesize sources = mSources;
+
+- (NSMutableArray *) sources {
+    @synchronized(self) {
+        return mSources;
+    }
+}
+
+- (CALayer *) sourceDot {
+    CALayer *dot = [CALayer layer];
+    dot.bounds = CGRectMake(0,0,16,16);
+    dot.cornerRadius = dot.bounds.size.width / 2;
+    dot.contents = (id) [UIImage imageNamed:@"dot"].CGImage;
+    dot.opaque = NO;
+    dot.hidden = YES;
+    
+    return dot;
+}
+
+- (void) setSources:(NSMutableArray *)sources {
+    @synchronized(self) {
+        [mSources release];
+        mSources = [sources retain];
+        
+        // Dump the old layers
+        for (CALayer *layer in sourceLayers) {
+            [layer removeFromSuperlayer];
+        }
+        [sourceLayers removeAllObjects];
+        
+        // Make a layer for each object
+        for (int i=0; i < [mSources count]; i++) {
+            CALayer *dot = [self sourceDot];
+            [sourceLayers addObject:dot];
+            [self.layer addSublayer:dot];
+        }
+    }
+}
 
 - (CGPoint) originCoord {
-    return originCoord;
+    @synchronized(self) {
+        return originCoord;
+    }
 }
 
 - (void) setOriginCoord:(CGPoint)newCoord {
-   // originCoord = newCoord;
-//    
-//        CALayer *layer = (CALayer *) CFDictionaryGetValue(dict, source);
-//        
-//        CGPoint sourcePosition = CGPointMake(source.position.x, source.position.y);
-//        
-//        CGAffineTransform transformRelativeOrigin = CGAffineTransformMakeTranslation(-originCoord.x, -originCoord.y);
-//        
-//        CGPoint sourceRelativeOrigin = CGPointApplyAffineTransform(sourcePosition, transformRelativeOrigin);
-//        
-//        CGFloat x = sourceRelativeOrigin.x;
-//        CGFloat y = sourceRelativeOrigin.y;
-//        
-//        // bleh if x=0
-//        CGFloat intensity = 1.0 / ( exp( (sqrt(x*x+y*y)-200)/200.0 ) + 1.0 );
-//        CGFloat r = 1.0 - intensity;
-//        CGFloat t = atan2(y,x);
-//        
-//        CGPoint pointLogScaled = CGPointMake(self.bounds.size.width/2 * -r*cos(t), self.bounds.size.width/2 * -r*sin(t));
-//        
-//        CGAffineTransform centerTransform = CGAffineTransformMakeTranslation(self.bounds.size.width/2, self.bounds.size.height/2);
-//        CGPoint pointScaledCentered = CGPointApplyAffineTransform(pointLogScaled, centerTransform);
-//        
-//        layer.position = pointScaledCentered;
-//        layer.opacity = intensity;
-//        
-//        [sourcesLayer addSublayer:layer];
-//    }
+    @synchronized(self) {
+        originCoord = newCoord;
+        
+        for (int i = 0; i < [self.sources count]; i++) {
+            ALSource *source = [self.sources objectAtIndex:i];
+            CALayer *layer = [sourceLayers objectAtIndex:i];
+            
+            CGPoint sourcePosition = CGPointMake(source.position.x, source.position.y);
+            
+            CGAffineTransform transformRelativeOrigin = CGAffineTransformMakeTranslation(-originCoord.x, -originCoord.y);
+            
+            CGPoint sourceRelativeOrigin = CGPointApplyAffineTransform(sourcePosition, transformRelativeOrigin);
+            
+            CGFloat x = sourceRelativeOrigin.x;
+            CGFloat y = sourceRelativeOrigin.y;
+            
+            // bleh if x=0
+            CGFloat intensity = 1.0 / ( exp( (sqrt(x*x+y*y)-200)/200.0 ) + 1.0 );
+            CGFloat r = 1.0 - intensity;
+            CGFloat t;
+            if (x!=0) {
+                t = atan2(y,x);
+            } else {
+                t = (y >= 0) ? M_PI / 2 : -M_PI/2;
+            }
+            
+            CGPoint pointLogScaled = CGPointMake(self.bounds.size.width/2 * r*cos(t), self.bounds.size.width/2 * r*sin(t));
+            
+            CGAffineTransform centerTransform = CGAffineTransformMakeTranslation(self.bounds.size.width/2, self.bounds.size.height/2);
+            CGPoint pointScaledCentered = CGPointApplyAffineTransform(pointLogScaled, centerTransform);
+            
+            layer.position = pointScaledCentered;
+            layer.opacity = intensity;
+            layer.hidden = NO;
+        }
+    }
 }
 
 - (void) setOriginOrientation:(CGFloat)newOrientation {
-    mOriginOrientation = newOrientation;
-    
-    
-    [UIView beginAnimations:nil context:NULL];
-    self.transform = CGAffineTransformMakeRotation(newOrientation);
-    [UIView commitAnimations];
+    @synchronized(self) {
+        mOriginOrientation = newOrientation;
+        
+        
+        [UIView beginAnimations:nil context:NULL];
+        self.transform = CGAffineTransformMakeRotation(newOrientation);
+        [UIView commitAnimations];
+    }
 }
 
 - (CALayer *) screenCircle {
@@ -97,6 +145,7 @@
 //        [self.layer addSublayer:sourcesLayer];
         
         mSources = [[NSMutableArray alloc] init];
+        sourceLayers = [[NSMutableArray alloc] init];
         
         [self.layer addSublayer:self.screenCircle];
     }
@@ -112,12 +161,10 @@
 */
 
 - (void)dealloc {
-    CFRelease(dict);
-    
     [mScreenCircle release];
     [mOriginCircle release];
     
-    [mSources release];
+    [sourceLayers release];
     
     [super dealloc];
 }

@@ -18,16 +18,20 @@
 @implementation SpiritRadioViewController
 
 - (void) setSources:(NSMutableArray *)sources {
-    [mSources release];
-    mSources = sources;
-    self.radarView.sources = mSources;
+    @synchronized(self) {
+        [mSources release];
+        mSources = [sources retain];
+        self.radarView.sources = mSources;
+    }
 }
 
 - (NSMutableArray *) sources {
+    @synchronized(self) {
     if (!mSources) {
         mSources = [[NSMutableArray alloc] init];
     }
     return mSources;
+    }
 }
 
 - (UIView *) view {

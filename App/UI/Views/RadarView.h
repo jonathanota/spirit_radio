@@ -18,9 +18,7 @@
     
     CGPoint originCoord;
     
-    CALayer *sourceLayer;
-    
-    CFMutableDictionaryRef dict;
+    NSMutableArray *sourceLayers;
 }
 
 @property (readonly) CALayer *screenCircle;

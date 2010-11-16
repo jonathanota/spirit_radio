@@ -77,7 +77,7 @@
 }
 
 - (void) updateViews {
-    self.radioViewController.radarView.originOrientation = mRadians;
+    self.radioViewController.radarView.originOrientation = mRadians - M_PI/2;
     self.radioViewController.radarView.originCoord = mOrigin;
     
     [OpenALManager sharedInstance].currentContext.listener.orientation = alorientation(cos(mRadians), sin(mRadians), 0, 0, 0, 1);
