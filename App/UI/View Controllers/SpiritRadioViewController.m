@@ -52,15 +52,23 @@
 - (NSMutableArray *) defaultSources {
     NSMutableArray *defaultSources = [NSMutableArray array];
     
-    for (NSString *fileName in [NSArray arrayWithObjects:@"librarian", nil]) {
-        ALSource *source = [ALSource source];
-        EWStreamBufferData *streamBuffer = [EWStreamBufferData streamBufferDataFromFileBaseName:fileName];
-        streamBuffer.audioLooping = YES;
-        source.position = alpoint(40441436.0, -79943544.0, 0);
-        source.referenceDistance = 50;
-        source.rolloffFactor = 20;
-        [defaultSources addObject:source];
-    }
+    NSString *defaultSourcePath = [[NSBundle mainBundle] pathForResource:@"default_sources" ofType:@"plist"];
+    for(NSDictionary *sourceRecord in [NSArray arrayWithContentsOfFile:defaultSourcePath]) {
+        NSString *baseName = [sourceRecord valueForKey:@"Base Name"];
+        CGFloat x = [[sourceRecord valueForKeyPath:@"Position.x"] floatValue];
+        CGFloat y = [[sourceRecord valueForKeyPath:@"Position.y"] floatValue];
+        CGFloat z = [[sourceRecord valueForKeyPath:@"Position.z"] floatValue];
+        ALPoint position = alpoint(x, y, z);
+        
+        ALSource *mySource = [ALSource source];
+        mySource.streamBuffer = [EWStreamBufferData streamBufferDataFromFileBaseName:baseName];
+        mySource.streamBuffer.audioLooping = YES;
+        mySource.position = position;
+        mySource.referenceDistance = 50;
+        mySource.rolloffFactor = 20;
+        
+        [defaultSources addObject:mySource];
+    };
     
     return defaultSources;
 }
@@ -87,31 +95,7 @@
     
     [OALSimpleAudio sharedInstanceWithSources:32];
     
-    ALSource *mySource = [ALSource source];
-    mySource.streamBuffer = [EWStreamBufferData streamBufferDataFromFileBaseName:@"ColdFunk"];
-    mySource.streamBuffer.audioLooping = YES;
-    mySource.position = alpoint(100,0,0);
-    mySource.referenceDistance = 50;
-    mySource.rolloffFactor = 20;
-    
-    ALSource *source2 = [ALSource source];
-    source2.streamBuffer = [EWStreamBufferData streamBufferDataFromFileBaseName:@"laugh"];
-    source2.streamBuffer.audioLooping = YES;
-    source2.position = alpoint(-100,0,0);
-    source2.referenceDistance = 50;
-    source2.rolloffFactor = 20;
-    
-    
-    ALSource *source3 = [ALSource source];
-    source3.streamBuffer = [EWStreamBufferData streamBufferDataFromFileBaseName:@"librarian"];
-    source3.streamBuffer.audioLooping = YES;
-    source3.position = alpoint(-50,-100,0);
-    source3.referenceDistance = 50;
-    source3.rolloffFactor = 20;
-    
-    [self.sources addObject:mySource];
-    [self.sources addObject:source2];
-    [self.sources addObject:source3];
+    self.sources = [self defaultSources];
     
     [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(updateQueue) userInfo:nil repeats:YES];
 }

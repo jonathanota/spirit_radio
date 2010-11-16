@@ -53,6 +53,8 @@
 		505E9A131290C61A0009690D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50565513128BC0D50000CC7D /* CoreGraphics.framework */; };
 		505E9A291290C6220009690D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50565587128BD4570000CC7D /* MediaPlayer.framework */; };
 		505E9A2C1290C6370009690D /* EWStreamBufferData.m in Sources */ = {isa = PBXBuildFile; fileRef = 505E9871128F8F3F0009690D /* EWStreamBufferData.m */; };
+		505E9C0912922E530009690D /* default_sources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 505E9C0812922E530009690D /* default_sources.plist */; };
+		505E9C0A12922E530009690D /* default_sources.plist in Resources */ = {isa = PBXBuildFile; fileRef = 505E9C0812922E530009690D /* default_sources.plist */; };
 		50B9395A128C11F800CBF2E1 /* OALAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B93924128C11F800CBF2E1 /* OALAction.m */; };
 		50B9395B128C11F800CBF2E1 /* OALActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B93926128C11F800CBF2E1 /* OALActionManager.m */; };
 		50B9395C128C11F800CBF2E1 /* OALAudioActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B93928128C11F800CBF2E1 /* OALAudioActions.m */; };
@@ -167,6 +169,7 @@
 		505E9882128F8F930009690D /* OpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenALSupport.h; sourceTree = "<group>"; };
 		505E9883128F8F930009690D /* OpenALSupport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OpenALSupport.c; sourceTree = "<group>"; };
 		505E9902128F98540009690D /* librarian.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = librarian.wav; sourceTree = "<group>"; };
+		505E9C0812922E530009690D /* default_sources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = default_sources.plist; sourceTree = "<group>"; };
 		50B93923128C11F800CBF2E1 /* OALAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OALAction.h; sourceTree = "<group>"; };
 		50B93924128C11F800CBF2E1 /* OALAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OALAction.m; sourceTree = "<group>"; };
 		50B93925128C11F800CBF2E1 /* OALActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OALActionManager.h; sourceTree = "<group>"; };
@@ -344,6 +347,7 @@
 				50564E2F128B7BC00000CC7D /* Spirit Radio-Info.plist */,
 				505654EA128BBB550000CC7D /* icon@2x.png */,
 				5056557F128BCE2E0000CC7D /* Default.png */,
+				505E9C0812922E530009690D /* default_sources.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -683,6 +687,7 @@
 				505E9751128F5C750009690D /* dot.png in Resources */,
 				505E9761128F5DDB0009690D /* laugh.wav in Resources */,
 				505E9904128F98540009690D /* librarian.wav in Resources */,
+				505E9C0A12922E530009690D /* default_sources.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +707,7 @@
 				505E9752128F5C750009690D /* dot.png in Resources */,
 				505E9762128F5DDB0009690D /* laugh.wav in Resources */,
 				505E9903128F98540009690D /* librarian.wav in Resources */,
+				505E9C0912922E530009690D /* default_sources.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

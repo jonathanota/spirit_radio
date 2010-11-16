@@ -1,0 +1,26 @@
+(
+	{
+		"Base Name" = ColdFunk;
+		Position = {
+			x = 100;
+			y = 0;
+			z = 0;
+		};
+	},
+	{
+		"Base Name" = laugh;
+		Position = {
+			x = -100;
+			y = 0;
+			z = 0;
+		};
+	},
+	{
+		"Base Name" = librarian;
+		Position = {
+			x = -50;
+			y = -100;
+			z = 0;
+		};
+	},
+)
