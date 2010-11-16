@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501980821292817C0021B273 /* bisegna.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5019807B1292816D0021B273 /* bisegna.wav */; };
+		501980831292817C0021B273 /* drama.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5019807C129281730021B273 /* drama.wav */; };
+		501980841292817C0021B273 /* foundry.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5019807D129281740021B273 /* foundry.wav */; };
+		501980851292817C0021B273 /* furnace.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5019807E129281750021B273 /* furnace.wav */; };
+		501980861292817C0021B273 /* kobus.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5019807F1292817A0021B273 /* kobus.wav */; };
+		501980871292817C0021B273 /* penka.wav in Resources */ = {isa = PBXBuildFile; fileRef = 501980801292817B0021B273 /* penka.wav */; };
+		501980881292817C0021B273 /* sninsky.wav in Resources */ = {isa = PBXBuildFile; fileRef = 501980811292817C0021B273 /* sninsky.wav */; };
+		501980891292817C0021B273 /* bisegna.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5019807B1292816D0021B273 /* bisegna.wav */; };
+		5019808A1292817C0021B273 /* drama.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5019807C129281730021B273 /* drama.wav */; };
+		5019808B1292817C0021B273 /* foundry.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5019807D129281740021B273 /* foundry.wav */; };
+		5019808C1292817C0021B273 /* furnace.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5019807E129281750021B273 /* furnace.wav */; };
+		5019808D1292817C0021B273 /* kobus.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5019807F1292817A0021B273 /* kobus.wav */; };
+		5019808E1292817C0021B273 /* penka.wav in Resources */ = {isa = PBXBuildFile; fileRef = 501980801292817B0021B273 /* penka.wav */; };
+		5019808F1292817C0021B273 /* sninsky.wav in Resources */ = {isa = PBXBuildFile; fileRef = 501980811292817C0021B273 /* sninsky.wav */; };
 		50564DF6128B7A180000CC7D /* SpiritRadioAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50564DF5128B7A180000CC7D /* SpiritRadioAppDelegate.m */; };
 		50564F8E128B7D540000CC7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50564DE9128B79930000CC7D /* main.m */; };
 		50564F97128B7D800000CC7D /* SpiritRadioAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50564DF5128B7A180000CC7D /* SpiritRadioAppDelegate.m */; };
@@ -35,17 +49,11 @@
 		50565657128BDB920000CC7D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50565656128BDB920000CC7D /* OpenAL.framework */; };
 		50565679128BDCAF0000CC7D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50565678128BDCAF0000CC7D /* AVFoundation.framework */; };
 		5056567D128BDCC60000CC7D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5056567C128BDCC60000CC7D /* AudioToolbox.framework */; };
-		5056569A128BDDD30000CC7D /* ColdFunk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 50565699128BDDD30000CC7D /* ColdFunk.wav */; };
-		5056569B128BDDD30000CC7D /* ColdFunk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 50565699128BDDD30000CC7D /* ColdFunk.wav */; };
 		505E9751128F5C750009690D /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 505E9750128F5C750009690D /* dot.png */; };
 		505E9752128F5C750009690D /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 505E9750128F5C750009690D /* dot.png */; };
-		505E9761128F5DDB0009690D /* laugh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 505E9760128F5DDB0009690D /* laugh.wav */; };
-		505E9762128F5DDB0009690D /* laugh.wav in Resources */ = {isa = PBXBuildFile; fileRef = 505E9760128F5DDB0009690D /* laugh.wav */; };
 		505E9872128F8F3F0009690D /* EWStreamBufferData.m in Sources */ = {isa = PBXBuildFile; fileRef = 505E9871128F8F3F0009690D /* EWStreamBufferData.m */; };
 		505E9884128F8F930009690D /* OpenALSupport.c in Sources */ = {isa = PBXBuildFile; fileRef = 505E9883128F8F930009690D /* OpenALSupport.c */; };
 		505E9885128F8F930009690D /* OpenALSupport.c in Sources */ = {isa = PBXBuildFile; fileRef = 505E9883128F8F930009690D /* OpenALSupport.c */; };
-		505E9903128F98540009690D /* librarian.wav in Resources */ = {isa = PBXBuildFile; fileRef = 505E9902128F98540009690D /* librarian.wav */; };
-		505E9904128F98540009690D /* librarian.wav in Resources */ = {isa = PBXBuildFile; fileRef = 505E9902128F98540009690D /* librarian.wav */; };
 		505E99DF1290C6050009690D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50565656128BDB920000CC7D /* OpenAL.framework */; };
 		505E99E01290C6050009690D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50565678128BDCAF0000CC7D /* AVFoundation.framework */; };
 		505E99E11290C6050009690D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5056567C128BDCC60000CC7D /* AudioToolbox.framework */; };
@@ -103,8 +111,6 @@
 		50B93985128C11F800CBF2E1 /* OpenALManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B93952128C11F800CBF2E1 /* OpenALManager.m */; };
 		50B93986128C11F800CBF2E1 /* mach_timing.c in Sources */ = {isa = PBXBuildFile; fileRef = 50B93954128C11F800CBF2E1 /* mach_timing.c */; };
 		50B93987128C11F800CBF2E1 /* NSMutableArray+WeakReferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B93957128C11F800CBF2E1 /* NSMutableArray+WeakReferences.m */; };
-		50B93A14128C1EE000CBF2E1 /* spooky.wav in Resources */ = {isa = PBXBuildFile; fileRef = 50B93A13128C1EE000CBF2E1 /* spooky.wav */; };
-		50B93A15128C1EE000CBF2E1 /* spooky.wav in Resources */ = {isa = PBXBuildFile; fileRef = 50B93A13128C1EE000CBF2E1 /* spooky.wav */; };
 		50B93A17128C1F1600CBF2E1 /* static.wav in Resources */ = {isa = PBXBuildFile; fileRef = 50B93A16128C1F1600CBF2E1 /* static.wav */; };
 		50B93A18128C1F1600CBF2E1 /* static.wav in Resources */ = {isa = PBXBuildFile; fileRef = 50B93A16128C1F1600CBF2E1 /* static.wav */; };
 		AE26662B11EFB89800EE18BD /* MyModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE26662A11EFB89800EE18BD /* MyModelSpec.m */; };
@@ -139,6 +145,13 @@
 /* Begin PBXFileReference section */
 		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		32A70AAB03705E1F00C91783 /* Spirit_Radio_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spirit_Radio_Prefix.pch; sourceTree = "<group>"; };
+		5019807B1292816D0021B273 /* bisegna.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bisegna.wav; sourceTree = "<group>"; };
+		5019807C129281730021B273 /* drama.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = drama.wav; sourceTree = "<group>"; };
+		5019807D129281740021B273 /* foundry.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = foundry.wav; sourceTree = "<group>"; };
+		5019807E129281750021B273 /* furnace.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = furnace.wav; sourceTree = "<group>"; };
+		5019807F1292817A0021B273 /* kobus.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = kobus.wav; sourceTree = "<group>"; };
+		501980801292817B0021B273 /* penka.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = penka.wav; sourceTree = "<group>"; };
+		501980811292817C0021B273 /* sninsky.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sninsky.wav; sourceTree = "<group>"; };
 		50564DE9128B79930000CC7D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		50564DF4128B7A180000CC7D /* SpiritRadioAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpiritRadioAppDelegate.h; sourceTree = "<group>"; };
 		50564DF5128B7A180000CC7D /* SpiritRadioAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpiritRadioAppDelegate.m; sourceTree = "<group>"; };
@@ -163,14 +176,11 @@
 		50565656128BDB920000CC7D /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		50565678128BDCAF0000CC7D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5056567C128BDCC60000CC7D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		50565699128BDDD30000CC7D /* ColdFunk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ColdFunk.wav; sourceTree = "<group>"; };
 		505E9750128F5C750009690D /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
-		505E9760128F5DDB0009690D /* laugh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = laugh.wav; sourceTree = "<group>"; };
 		505E9870128F8F3F0009690D /* EWStreamBufferData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWStreamBufferData.h; sourceTree = "<group>"; };
 		505E9871128F8F3F0009690D /* EWStreamBufferData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWStreamBufferData.m; sourceTree = "<group>"; };
 		505E9882128F8F930009690D /* OpenALSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenALSupport.h; sourceTree = "<group>"; };
 		505E9883128F8F930009690D /* OpenALSupport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = OpenALSupport.c; sourceTree = "<group>"; };
-		505E9902128F98540009690D /* librarian.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = librarian.wav; sourceTree = "<group>"; };
 		505E9C0812922E530009690D /* default_sources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = default_sources.plist; sourceTree = "<group>"; };
 		505E9C5D1292350D0009690D /* demo_sources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = demo_sources.plist; sourceTree = "<group>"; };
 		50B93923128C11F800CBF2E1 /* OALAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OALAction.h; sourceTree = "<group>"; };
@@ -224,7 +234,6 @@
 		50B93957128C11F800CBF2E1 /* NSMutableArray+WeakReferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+WeakReferences.m"; sourceTree = "<group>"; };
 		50B93958128C11F800CBF2E1 /* ObjectALMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectALMacros.h; sourceTree = "<group>"; };
 		50B93959128C11F800CBF2E1 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
-		50B93A13128C1EE000CBF2E1 /* spooky.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = spooky.wav; sourceTree = "<group>"; };
 		50B93A16128C1F1600CBF2E1 /* static.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = static.wav; sourceTree = "<group>"; };
 		AE26662A11EFB89800EE18BD /* MyModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyModelSpec.m; sourceTree = "<group>"; };
 		AE2667B111EFC2B000EE18BD /* OCMock-iPhone.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "OCMock-iPhone.framework"; sourceTree = "<group>"; };
@@ -370,11 +379,14 @@
 		50565687128BDDB60000CC7D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				505E9902128F98540009690D /* librarian.wav */,
-				505E9760128F5DDB0009690D /* laugh.wav */,
+				5019807B1292816D0021B273 /* bisegna.wav */,
+				5019807C129281730021B273 /* drama.wav */,
+				5019807D129281740021B273 /* foundry.wav */,
+				5019807E129281750021B273 /* furnace.wav */,
+				5019807F1292817A0021B273 /* kobus.wav */,
+				501980801292817B0021B273 /* penka.wav */,
+				501980811292817C0021B273 /* sninsky.wav */,
 				50B93A16128C1F1600CBF2E1 /* static.wav */,
-				50B93A13128C1EE000CBF2E1 /* spooky.wav */,
-				50565699128BDDD30000CC7D /* ColdFunk.wav */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -684,15 +696,18 @@
 				505654EC128BBB550000CC7D /* icon@2x.png in Resources */,
 				50565581128BCE2E0000CC7D /* Default.png in Resources */,
 				50565586128BD3D70000CC7D /* noise_compressed.mp4 in Resources */,
-				5056569A128BDDD30000CC7D /* ColdFunk.wav in Resources */,
 				50B93963128C11F800CBF2E1 /* LICENSE.ObjectAL.txt in Resources */,
-				50B93A14128C1EE000CBF2E1 /* spooky.wav in Resources */,
 				50B93A17128C1F1600CBF2E1 /* static.wav in Resources */,
 				505E9751128F5C750009690D /* dot.png in Resources */,
-				505E9761128F5DDB0009690D /* laugh.wav in Resources */,
-				505E9904128F98540009690D /* librarian.wav in Resources */,
 				505E9C0A12922E530009690D /* default_sources.plist in Resources */,
 				505E9C5F1292350D0009690D /* demo_sources.plist in Resources */,
+				501980891292817C0021B273 /* bisegna.wav in Resources */,
+				5019808A1292817C0021B273 /* drama.wav in Resources */,
+				5019808B1292817C0021B273 /* foundry.wav in Resources */,
+				5019808C1292817C0021B273 /* furnace.wav in Resources */,
+				5019808D1292817C0021B273 /* kobus.wav in Resources */,
+				5019808E1292817C0021B273 /* penka.wav in Resources */,
+				5019808F1292817C0021B273 /* sninsky.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,15 +720,18 @@
 				505654EB128BBB550000CC7D /* icon@2x.png in Resources */,
 				50565580128BCE2E0000CC7D /* Default.png in Resources */,
 				50565585128BD3D70000CC7D /* noise_compressed.mp4 in Resources */,
-				5056569B128BDDD30000CC7D /* ColdFunk.wav in Resources */,
 				50B9397A128C11F800CBF2E1 /* LICENSE.ObjectAL.txt in Resources */,
-				50B93A15128C1EE000CBF2E1 /* spooky.wav in Resources */,
 				50B93A18128C1F1600CBF2E1 /* static.wav in Resources */,
 				505E9752128F5C750009690D /* dot.png in Resources */,
-				505E9762128F5DDB0009690D /* laugh.wav in Resources */,
-				505E9903128F98540009690D /* librarian.wav in Resources */,
 				505E9C0912922E530009690D /* default_sources.plist in Resources */,
 				505E9C5E1292350D0009690D /* demo_sources.plist in Resources */,
+				501980821292817C0021B273 /* bisegna.wav in Resources */,
+				501980831292817C0021B273 /* drama.wav in Resources */,
+				501980841292817C0021B273 /* foundry.wav in Resources */,
+				501980851292817C0021B273 /* furnace.wav in Resources */,
+				501980861292817C0021B273 /* kobus.wav in Resources */,
+				501980871292817C0021B273 /* penka.wav in Resources */,
+				501980881292817C0021B273 /* sninsky.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
