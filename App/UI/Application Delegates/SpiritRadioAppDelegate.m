@@ -25,8 +25,14 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (void) resetButtonPressed:(id)sender {
-    self.radioViewController.source2.position = alpoint(mOrigin.x, mOrigin.y, 0);
+- (void) toggleDemoMode:(id)sender {
+    isInDemoMode = !isInDemoMode;
+}
+
+- (void) toggleDebugMode:(UILongPressGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        debugLabel.hidden = !debugLabel.hidden;
+    }
 }
 
 - (id) init {
@@ -37,13 +43,22 @@
         self.radioViewController = [[SpiritRadioViewController alloc] init];
         [self.window addSubview:self.radioViewController.view];
         
-        UIButton *resetButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        resetButton.frame = CGRectMake(170, 20, 75, 75);
-        resetButton.titleLabel.text = @"Set Location";
-        [resetButton addTarget:self action:@selector(resetButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-        [self.window addSubview:resetButton];
+        UISwipeGestureRecognizer *demoModeToggle = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(toggleDemoMode:)];
+        demoModeToggle.numberOfTouchesRequired = 2;
+        demoModeToggle.direction = UISwipeGestureRecognizerDirectionDown;
+        [self.window addGestureRecognizer:demoModeToggle];
+        
+        UILongPressGestureRecognizer *debugToggle = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(toggleDebugMode:)];
+        debugToggle.minimumPressDuration = 2.0;
+        [self.window addGestureRecognizer:debugToggle];
         
         [NSTimer scheduledTimerWithTimeInterval:(1.0/60.0) target:self selector:@selector(updateViews) userInfo:nil repeats:YES];
+        
+        debugLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 20, 150, 50)];
+        debugLabel.font = [UIFont systemFontOfSize:9.0];
+        debugLabel.numberOfLines = 4;
+        debugLabel.hidden = YES;
+        [self.window addSubview:debugLabel];
     }
     return self;
 }
@@ -59,10 +74,13 @@
     num = MAX(num, 0);
     if(num < 0.1) num = 0;
     
-    [self.radioViewController setStatic:num];
-//    [self.radioViewController setStatic:0];
+    if (isInDemoMode) {
+        [self.radioViewController setStatic:0];
+    } else {
+        [self.radioViewController setStatic:num];
+    }
     
-    self.radioViewController.debugLabel.text = [NSString stringWithFormat:@"lat: %d\nlon: %d\nacc: %d\nhead: %d", (int) mOrigin.x, (int)mOrigin.y,(int) gpsAcc, (int) (mRadians*(180.0/M_PI))];
+    debugLabel.text = [NSString stringWithFormat:@"lat: %d\nlon: %d\nacc: %d\nhead: %d", (int) mOrigin.x, (int)mOrigin.y,(int) gpsAcc, (int) (mRadians*(180.0/M_PI))];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    

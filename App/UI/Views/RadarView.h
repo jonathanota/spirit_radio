@@ -14,20 +14,19 @@
     CALayer *mScreenCircle;
     CALayer *mOriginCircle;
     
-    NSArray *sources;
-    ALSource *source;
-    CALayer *sourceLayer;
+    NSMutableArray *mSources;
     
     CGPoint originCoord;
     
-    NSMutableDictionary *dict;
+    CALayer *sourcesLayer;
+    
+    CFMutableDictionaryRef dict;
 }
 
 @property (readonly) CALayer *screenCircle;
 @property (readonly) CALayer *originCircle;
 
-@property (retain) NSArray *sources;
-@property (retain) ALSource *source;
+@property (retain) NSMutableArray *sources;
 @property (assign) CGPoint originCoord;
 @property (nonatomic, assign) CGFloat originOrientation;
 

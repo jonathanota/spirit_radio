@@ -22,6 +22,10 @@
     
     BOOL headingWrong;
     CGFloat gpsAcc;
+    
+    BOOL isInDemoMode;
+    
+    UILabel *debugLabel;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

@@ -34,7 +34,7 @@ describe(@"SpiritRadioAppDelegate", ^{
     it(@"has a window frame same size as the screen", PENDING);
     
     it(@"has SpiritRadioViewController for a viewControllerClass", ^{
-        assertThat(appDelegate.viewControllerClass, is(equalTo([SpiritRadioViewController class])));
+        assertThat(appDelegate.radioViewController, is(notNilValue()));
     });
     
 });

@@ -17,7 +17,7 @@
 
 @implementation SpiritRadioViewController
 
-@synthesize debugLabel, source2;
+@synthesize sources = mSources;
 
 - (UIView *) view {
     UIView *view = [super view];
@@ -46,10 +46,23 @@
 }
 */
 
+//- (NSArray *) demoSources {
+//    
+//}
+
+- (void) setSources:(NSMutableArray *)sources {
+    mSources = sources;
+    self.radarView.sources = sources;
+}
+
+- (void) clearSources {
+    [self.sources removeAllObjects];
+    self.radarView.sources = self.sources;
+}
+
 - (id) init {
     self = [super init];
     if (self) {
-        
         [self.view addSubview:self.radarView];
         
         noisePlayer = [[MPMoviePlayerController alloc] initWithContentURL:[[NSBundle mainBundle] URLForResource:@"noise_compressed" withExtension:@"mp4"]];
@@ -61,11 +74,8 @@
         [self.view addSubview:noisePlayer.view];
         [noisePlayer play];
         
-        debugLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 150, 50)];
-        debugLabel.font = [UIFont systemFontOfSize:9.0];
-        debugLabel.numberOfLines = 4;
-        [self.view addSubview:debugLabel];
         
+        mSources = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -76,73 +86,37 @@
 }
 */
 
+- (NSMutableArray *) defaultSources {
+    NSMutableArray *defaultSources = [NSMutableArray array];
+    
+    for (NSString *fileName in [NSArray arrayWithObjects:@"librarian", nil]) {
+        ALSource *source = [ALSource source];
+        EWStreamBufferData *streamBuffer = [EWStreamBufferData streamBufferDataFromFileBaseName:fileName];
+        streamBuffer.audioLooping = YES;
+        source.position = alpoint(40441436.0, -79943544.0, 0);
+        source.referenceDistance = 50;
+        source.rolloffFactor = 20;
+        [defaultSources addObject:source];
+    }
+    
+    return defaultSources;
+}
+
 - (void) updateQueue {
-    [coolBufferData updateQueue:source2.sourceId];
+    for (ALSource *source in self.sources) {
+        [source.streamBuffer updateQueue:source.sourceId];
+    }
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
     [OALSimpleAudio sharedInstanceWithSources:32];
     
-    ALSource *source = [[ALSource source] retain];
-    ALBuffer *laughBuffer = [[[OALAudioSupport sharedInstance] bufferFromFile:@"laugh.wav"] retain];
-    
-    source.position = alpoint(40450510.000000, -79930090.000000, 0);
-    source.referenceDistance = 50;
-    source.rolloffFactor = 20;
-    
-    [source play:laughBuffer loop:YES];
-    
-    source2 = [[ALSource source] retain];
-    coolBufferData = [[EWStreamBufferData streamBufferDataFromFileBaseName:@"librarian"] retain];
-    coolBufferData.audioLooping = YES;
-    
-    source2.position = alpoint(40450420.000000, -79930590.000000, 0);
-    source2.referenceDistance = 50;
-    source2.rolloffFactor = 20;
+    self.sources = self.defaultSources;
     
     [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(updateQueue) userInfo:nil repeats:YES];
-    
-//    [OALSimpleAudio sharedInstanceWithSources:32];
-//    
-////    staticSource = [[ALSource source]retain];
-////    ALBuffer *staticBuffer = [[[OALAudioSupport sharedInstance] bufferFromFile:@"static.wav"] retain];    
-////    staticSource.gain = 0;
-////    [staticSource play:staticBuffer loop:YES];
-//    
-//    ALSource *source = [[ALSource source]retain];
-//    ALBuffer *buffer = [[[OALAudioSupport sharedInstance] bufferFromFile:@"laugh.wav"] retain];
-//    //40441684, -79942748
-//    //40450220.000000, -79930456.000000
-//    source.position = alpoint(0, 0, 0);
-//    source.referenceDistance = 40.0;
-//    source.rolloffFactor = 5.0;
-//    source.coneOuterGain = 0.0;
-//    source.gain = 1;
-//    
-//    static  alcMacOSXRenderingQualityProcPtr    proc = NULL;
-//    
-//    if (proc == NULL) {
-//        proc = (alcMacOSXRenderingQualityProcPtr) alcGetProcAddress(NULL, (const ALCchar*) "alcMacOSXRenderingQuality");
-//    }
-//    
-//    if (proc)
-//        proc(ALC_IPHONE_SPATIAL_RENDERING_QUALITY_HEADPHONES);
-//    else {
-//        NSLog(@"proc's a no go");
-//    }
-//    
-//    [OpenALManager sharedInstance].currentContext.distanceModel = AL_EXPONENT_DISTANCE;
-//    
-//    [source play:buffer loop:YES];
-//    
-//    sources = [[NSMutableArray alloc] init];
-//    [sources addObject:source];
-    
-    self.radarView.source = source2;
 }
 
 - (void) setStatic:(CGFloat)amount {
