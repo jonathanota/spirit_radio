@@ -28,11 +28,14 @@
     NSMutableArray *mSources;
     
     NSUInteger sourcesFaded;
+    
+    BOOL switched;
 }
 
 @property (readonly) RadarView *radarView;
 @property (readwrite, retain) NSMutableArray *sources;
 
 - (void) setStatic:(CGFloat)amount;
+- (void) switchToDemoMode;
 
 @end

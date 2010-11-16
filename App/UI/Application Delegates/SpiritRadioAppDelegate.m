@@ -27,6 +27,17 @@
 
 - (void) toggleDemoMode:(id)sender {
     isInDemoMode = !isInDemoMode;
+    if (isInDemoMode) {
+        [self.radioViewController switchToDemoMode];
+        [locationManager stopUpdatingHeading];
+        [locationManager stopUpdatingLocation];
+        mOrigin = CGPointZero;
+        mRadians = M_PI/2;
+    } else {
+        [locationManager startUpdatingHeading];
+        [locationManager stopUpdatingLocation];
+    }
+
 }
 
 - (void) toggleDebugMode:(UILongPressGestureRecognizer *)sender {
@@ -38,7 +49,6 @@
 - (id) init {
     self = [super init];
     if (self) {
-        isInDemoMode = YES;
         
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
@@ -70,6 +80,7 @@
     self.radioViewController.radarView.originCoord = mOrigin;
     
     [OpenALManager sharedInstance].currentContext.listener.orientation = alorientation(cos(mRadians), sin(mRadians), 0, 0, 0, 1);
+    [OpenALManager sharedInstance].currentContext.listener.position = alpoint(mOrigin.x, mOrigin.y, 0);
     
     CGFloat num = gpsAcc/55.0/2.0 + headingWrong/2.0;
     num = MIN(num, 1);
@@ -100,10 +111,6 @@
 - (void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
     CLLocationDirection heading = newHeading.trueHeading;
     
-    if (isInDemoMode) {
-        heading = 0;
-    }
-    
     mRadians = (90.0 - heading) * (M_PI/180.0);
     
     headingWrong = newHeading.headingAccuracy < 0;
@@ -111,14 +118,7 @@
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-    if (isInDemoMode) {
-        mOrigin = CGPointZero;
-    } else {
-        mOrigin = CGPointMake(newLocation.coordinate.latitude * pow(10, 6), newLocation.coordinate.longitude * pow(10, 6));
-    }
-    
-    
-    [OpenALManager sharedInstance].currentContext.listener.position = alpoint(mOrigin.x, mOrigin.y, 0);
+    mOrigin = CGPointMake(newLocation.coordinate.latitude * pow(10, 6), newLocation.coordinate.longitude * pow(10, 6));
     
     self.radioViewController.radarView.originCoord = mOrigin;
     

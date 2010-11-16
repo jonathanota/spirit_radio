@@ -108,21 +108,22 @@
     self.sources = [self defaultSources];
     
     [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(updateQueue) userInfo:nil repeats:YES];
-    
-    [self performSelector:@selector(switchit) withObject:nil afterDelay:5.0];
 }
 
-- (void) switchit {
+- (void) switchToDemoMode {
+    if (switched) return;
+    
     sourcesFaded = 0;
     for (ALSource *source in self.sources) {
-        [source fadeTo:0 duration:0.5 target:self selector:@selector(finishSwitchit)];
+        [source fadeTo:0 duration:0.5 target:self selector:@selector(finishSwitchToDemoMode)];
     }
 }
 
-- (void) finishSwitchit {
+- (void) finishSwitchToDemoMode {
     sourcesFaded++;
     if (sourcesFaded >= [self.sources count]) {
         self.sources = [self demoSources];
+        switched = YES;
     }
 }
 
