@@ -69,6 +69,8 @@
 		506F85F11292956B0026B9E6 /* foundry2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 506F85EF1292956B0026B9E6 /* foundry2.wav */; };
 		506F85F21292956B0026B9E6 /* dance.wav in Resources */ = {isa = PBXBuildFile; fileRef = 506F85EE1292956B0026B9E6 /* dance.wav */; };
 		506F85F31292956B0026B9E6 /* foundry2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 506F85EF1292956B0026B9E6 /* foundry2.wav */; };
+		506F85F5129298B70026B9E6 /* noiseWarning.png in Resources */ = {isa = PBXBuildFile; fileRef = 506F85F4129298B70026B9E6 /* noiseWarning.png */; };
+		506F85F6129298B70026B9E6 /* noiseWarning.png in Resources */ = {isa = PBXBuildFile; fileRef = 506F85F4129298B70026B9E6 /* noiseWarning.png */; };
 		50B9395A128C11F800CBF2E1 /* OALAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B93924128C11F800CBF2E1 /* OALAction.m */; };
 		50B9395B128C11F800CBF2E1 /* OALActionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B93926128C11F800CBF2E1 /* OALActionManager.m */; };
 		50B9395C128C11F800CBF2E1 /* OALAudioActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B93928128C11F800CBF2E1 /* OALAudioActions.m */; };
@@ -189,6 +191,7 @@
 		505E9C5D1292350D0009690D /* demo_sources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = demo_sources.plist; sourceTree = "<group>"; };
 		506F85EE1292956B0026B9E6 /* dance.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dance.wav; sourceTree = "<group>"; };
 		506F85EF1292956B0026B9E6 /* foundry2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = foundry2.wav; sourceTree = "<group>"; };
+		506F85F4129298B70026B9E6 /* noiseWarning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noiseWarning.png; sourceTree = "<group>"; };
 		50B93923128C11F800CBF2E1 /* OALAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OALAction.h; sourceTree = "<group>"; };
 		50B93924128C11F800CBF2E1 /* OALAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OALAction.m; sourceTree = "<group>"; };
 		50B93925128C11F800CBF2E1 /* OALActionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OALActionManager.h; sourceTree = "<group>"; };
@@ -374,6 +377,7 @@
 		50565425128BAD540000CC7D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				506F85F4129298B70026B9E6 /* noiseWarning.png */,
 				505E9750128F5C750009690D /* dot.png */,
 				50565584128BD3D70000CC7D /* noise_compressed.mp4 */,
 				505654D3128BB8DF0000CC7D /* background@2x.png */,
@@ -718,6 +722,7 @@
 				5019808F1292817C0021B273 /* sninsky.wav in Resources */,
 				506F85F21292956B0026B9E6 /* dance.wav in Resources */,
 				506F85F31292956B0026B9E6 /* foundry2.wav in Resources */,
+				506F85F6129298B70026B9E6 /* noiseWarning.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +749,7 @@
 				501980881292817C0021B273 /* sninsky.wav in Resources */,
 				506F85F01292956B0026B9E6 /* dance.wav in Resources */,
 				506F85F11292956B0026B9E6 /* foundry2.wav in Resources */,
+				506F85F5129298B70026B9E6 /* noiseWarning.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

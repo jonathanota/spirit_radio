@@ -115,6 +115,12 @@
     [noisePlayer play];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieStateChanged:) name:MPMoviePlayerPlaybackStateDidChangeNotification object:noisePlayer];
     
+    UIImageView *noiseWarning = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"noiseWarning"]];
+    noiseWarning.opaque = NO;
+    noiseWarning.frame = noisePlayer.view.bounds;
+    [noisePlayer.view addSubview:noiseWarning];
+    [noiseWarning release];
+    
     [OALAudioSupport sharedInstance].allowIpod = NO;
     
     [OALSimpleAudio sharedInstanceWithSources:32];

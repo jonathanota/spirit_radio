@@ -118,8 +118,6 @@
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     mOrigin = CGPointMake(newLocation.coordinate.latitude * pow(10, 6), newLocation.coordinate.longitude * pow(10, 6));
     
-    NSLog(@"update loc");
-    
     self.radioViewController.radarView.originCoord = mOrigin;
     
     gpsAcc = newLocation.horizontalAccuracy;
