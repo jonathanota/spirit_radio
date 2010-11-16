@@ -77,7 +77,7 @@
     self.radioViewController.radarView.originOrientation = mRadians - M_PI/2;
     self.radioViewController.radarView.originCoord = mOrigin;
     
-    [OpenALManager sharedInstance].currentContext.listener.orientation = alorientation(cos(mRadians), sin(mRadians), 0, 0, 0, 1);
+    [OpenALManager sharedInstance].currentContext.listener.orientation = alorientation(cos(mRadians), sin(mRadians), 0, 0, 0, -1);
     [OpenALManager sharedInstance].currentContext.listener.position = alpoint(mOrigin.x, mOrigin.y, 0);
     
     CGFloat num = gpsAcc/55.0/2.0 + headingWrong/2.0;
