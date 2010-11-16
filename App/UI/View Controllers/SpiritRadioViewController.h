@@ -25,14 +25,7 @@
     
     MPMoviePlayerController *noisePlayer;
     
-    ALSource *mySource;
-    EWStreamBufferData *coolBufferData;
-    
-    ALSource *source2;
-    EWStreamBufferData *buffer2;
-    
-    ALSource *source3;
-    EWStreamBufferData *buffer3;
+    NSMutableArray *mSources;
 }
 
 @property (readonly) RadarView *radarView;

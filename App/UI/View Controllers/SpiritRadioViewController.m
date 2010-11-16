@@ -19,6 +19,13 @@
 
 @synthesize sources = mSources;
 
+- (NSMutableArray *) sources {
+    if (!mSources) {
+        mSources = [[NSMutableArray alloc] init];
+    }
+    return mSources;
+}
+
 - (UIView *) view {
     UIView *view = [super view];
     if (view) {
@@ -59,11 +66,9 @@
 }
 
 - (void) updateQueue {
-    [coolBufferData updateQueue:mySource.sourceId];
-    [source2.streamBuffer updateQueue:source2.sourceId];
-    [buffer3 updateQueue:source3.sourceId];
-    
-    
+    for (ALSource *source in self.sources) {
+        [source.streamBuffer updateQueue:source.sourceId];
+    }
 }
 
 - (void)viewDidLoad {
@@ -82,32 +87,31 @@
     
     [OALSimpleAudio sharedInstanceWithSources:32];
     
-    mySource = [[ALSource source] retain];
-    coolBufferData = [[EWStreamBufferData streamBufferDataFromFileBaseName:@"ColdFunk"] retain];
-    coolBufferData.audioLooping = YES;
-    
+    ALSource *mySource = [ALSource source];
+    mySource.streamBuffer = [EWStreamBufferData streamBufferDataFromFileBaseName:@"ColdFunk"];
+    mySource.streamBuffer.audioLooping = YES;
     mySource.position = alpoint(100,0,0);
     mySource.referenceDistance = 50;
     mySource.rolloffFactor = 20;
     
-    source2 = [[ALSource source] retain];
+    ALSource *source2 = [ALSource source];
     source2.streamBuffer = [EWStreamBufferData streamBufferDataFromFileBaseName:@"laugh"];
-    buffer2.audioLooping = YES;
-    
+    source2.streamBuffer.audioLooping = YES;
     source2.position = alpoint(-100,0,0);
     source2.referenceDistance = 50;
     source2.rolloffFactor = 20;
     
     
-    source3 = [[ALSource source] retain];
-    buffer3 = [[EWStreamBufferData streamBufferDataFromFileBaseName:@"librarian"] retain];
-    buffer3.audioLooping = YES;
-    
+    ALSource *source3 = [ALSource source];
+    source3.streamBuffer = [EWStreamBufferData streamBufferDataFromFileBaseName:@"librarian"];
+    source3.streamBuffer.audioLooping = YES;
     source3.position = alpoint(-50,-100,0);
     source3.referenceDistance = 50;
     source3.rolloffFactor = 20;
     
-    
+    [self.sources addObject:mySource];
+    [self.sources addObject:source2];
+    [self.sources addObject:source3];
     
     [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(updateQueue) userInfo:nil repeats:YES];
 }
@@ -118,6 +122,7 @@
 }
 
 - (void)dealloc {
+    [mSources release];
     [mRadarView release];
     
     [super dealloc];
