@@ -34,6 +34,7 @@
 
 @property (readonly) RadarView *radarView;
 @property (readwrite, retain) NSMutableArray *sources;
+@property (readonly) ALSource *staticSource;
 
 - (void) setStatic:(CGFloat)amount;
 - (void) switchToDemoMode;

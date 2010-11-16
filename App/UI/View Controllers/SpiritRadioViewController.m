@@ -124,6 +124,11 @@
     
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     
+    staticSource = [[ALSource source] retain];
+    ALBuffer *staticBuffer = [[[OALAudioSupport sharedInstance] bufferFromFile:@"static.wav"] retain];
+    staticSource.gain = 0;
+    [staticSource play:staticBuffer loop:YES];
+    
     self.sources = [self defaultSources];
     
     [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(updateQueue) userInfo:nil repeats:YES];
@@ -148,7 +153,10 @@
 
 - (void) setStatic:(CGFloat)amount {
     staticSource.gain = amount;
+    
+    [UIView beginAnimations:nil context:NULL];
     noisePlayer.view.alpha = amount;
+    [UIView commitAnimations];
 }
 
 - (void)dealloc {

@@ -28,14 +28,11 @@
 - (void) toggleDemoMode:(id)sender {
     isInDemoMode = !isInDemoMode;
     if (isInDemoMode) {
-        [locationManager stopUpdatingHeading];
         [locationManager stopUpdatingLocation];
         mOrigin = CGPointZero;
-        mRadians = M_PI/2;
         gpsAcc = 1000;
         [self.radioViewController switchToDemoMode];
     } else {
-        [locationManager startUpdatingHeading];
         [locationManager startUpdatingLocation];
     }
 
