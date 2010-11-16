@@ -21,7 +21,7 @@
     CALayer *sourceLayer = [CALayer layer];
     sourceLayer.bounds = CGRectMake(0, 0, 16, 16);
     sourceLayer.cornerRadius = mOriginCircle.bounds.size.width / 2;
-    sourceLayer.contents = [UIImage imageNamed:@"dot"].CGImage;
+    sourceLayer.contents = (id) [UIImage imageNamed:@"dot"].CGImage;
     sourceLayer.opaque = NO;
     
     return sourceLayer;
@@ -97,7 +97,7 @@
 //        mScreenCircle.shadowRadius = 10.0;
 //        mScreenCircle.shadowColor = [UIColor blackColor].CGColor;
 //        mScreenCircle.shadowOpacity = 1.0;
-        mScreenCircle.contents = [UIImage imageNamed:@"radar"].CGImage;
+        mScreenCircle.contents = (id) [UIImage imageNamed:@"radar"].CGImage;
     }
     return mScreenCircle;
 }
