@@ -35,56 +35,12 @@
     return mRadarView;
 }
 
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization.
-    }
-    return self;
-}
-*/
-
-//- (NSArray *) demoSources {
-//    
-//}
-
-- (void) setSources:(NSMutableArray *)sources {
-    mSources = sources;
-    self.radarView.sources = sources;
-}
-
-- (void) clearSources {
-    [self.sources removeAllObjects];
-    self.radarView.sources = self.sources;
-}
-
 - (id) init {
     self = [super init];
     if (self) {
-        [self.view addSubview:self.radarView];
-        
-        noisePlayer = [[MPMoviePlayerController alloc] initWithContentURL:[[NSBundle mainBundle] URLForResource:@"noise_compressed" withExtension:@"mp4"]];
-        noisePlayer.view.frame = self.view.bounds;
-        noisePlayer.shouldAutoplay = YES;
-        noisePlayer.controlStyle = MPMovieControlStyleNone;
-        noisePlayer.repeatMode = MPMovieRepeatModeOne;
-        noisePlayer.view.alpha = 0.1;
-        [self.view addSubview:noisePlayer.view];
-        [noisePlayer play];
-        
-        
-        mSources = [[NSMutableArray alloc] init];
     }
     return self;
 }
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
 
 - (NSMutableArray *) defaultSources {
     NSMutableArray *defaultSources = [NSMutableArray array];
@@ -103,18 +59,32 @@
 }
 
 - (void) updateQueue {
-    for (ALSource *source in self.sources) {
-        [source.streamBuffer updateQueue:source.sourceId];
-    }
+    [coolBufferData updateQueue:mySource.sourceId];
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //[self.view addSubview:self.radarView];
+    
+    noisePlayer = [[MPMoviePlayerController alloc] initWithContentURL:[[NSBundle mainBundle] URLForResource:@"noise_compressed" withExtension:@"mp4"]];
+    noisePlayer.view.frame = self.view.bounds;
+    noisePlayer.shouldAutoplay = YES;
+    noisePlayer.controlStyle = MPMovieControlStyleNone;
+    noisePlayer.repeatMode = MPMovieRepeatModeOne;
+    noisePlayer.view.alpha = 0.1;
+    [self.view addSubview:noisePlayer.view];
+    [noisePlayer play];
+    
     [OALSimpleAudio sharedInstanceWithSources:32];
     
-    self.sources = self.defaultSources;
+    mySource = [[ALSource source] retain];
+    coolBufferData = [[EWStreamBufferData streamBufferDataFromFileBaseName:@"ColdFunk"] retain];
+    coolBufferData.audioLooping = YES;
+    
+    mySource.position = alpoint(100,0,0);
+    mySource.referenceDistance = 50;
+    mySource.rolloffFactor = 20;
     
     [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(updateQueue) userInfo:nil repeats:YES];
 }
@@ -123,28 +93,6 @@
     staticSource.gain = amount;
     noisePlayer.view.alpha = amount;
 }
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc. that aren't in use.
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-}
-
 
 - (void)dealloc {
     [mRadarView release];

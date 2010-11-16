@@ -38,6 +38,8 @@
 - (id) init {
     self = [super init];
     if (self) {
+        isInDemoMode = YES;
+        
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
         self.radioViewController = [[SpiritRadioViewController alloc] init];
@@ -104,7 +106,13 @@
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-    mOrigin = CGPointMake(newLocation.coordinate.latitude * pow(10, 6), newLocation.coordinate.longitude * pow(10, 6));
+    if (isInDemoMode) {
+        mOrigin = CGPointZero;
+    } else {
+        mOrigin = CGPointMake(newLocation.coordinate.latitude * pow(10, 6), newLocation.coordinate.longitude * pow(10, 6));
+    }
+    
+    
     [OpenALManager sharedInstance].currentContext.listener.position = alpoint(mOrigin.x, mOrigin.y, 0);
     
     self.radioViewController.radarView.originCoord = mOrigin;

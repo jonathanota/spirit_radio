@@ -15,67 +15,40 @@
 @implementation RadarView
 
 @synthesize originOrientation = mOriginOrientation;
-@synthesize sources = mSources;
-
-- (CALayer *) newSourceLayer {
-    CALayer *sourceLayer = [CALayer layer];
-    sourceLayer.bounds = CGRectMake(0, 0, 16, 16);
-    sourceLayer.cornerRadius = mOriginCircle.bounds.size.width / 2;
-    sourceLayer.contents = (id) [UIImage imageNamed:@"dot"].CGImage;
-    sourceLayer.opaque = NO;
-    
-    return sourceLayer;
-}
-
-- (void) setSources:(NSMutableArray *)sources {
-    mSources = sources;
-    if (dict) {
-        CFRelease(dict);
-    }
-    dict = CFDictionaryCreateMutable(NULL, 0, NULL, NULL);
-    for (ALSource *source in sources) {
-        CFDictionarySetValue(dict, source, [self newSourceLayer]);
-    }
-}
-
 
 - (CGPoint) originCoord {
     return originCoord;
 }
 
 - (void) setOriginCoord:(CGPoint)newCoord {
-    originCoord = newCoord;
-    
-    [sourcesLayer removeFromSuperlayer];
-    [sourcesLayer release];
-    
-    for (ALSource *source in self.sources) {
-        CALayer *layer = (CALayer *) CFDictionaryGetValue(dict, source);
-        
-        CGPoint sourcePosition = CGPointMake(source.position.x, source.position.y);
-        
-        CGAffineTransform transformRelativeOrigin = CGAffineTransformMakeTranslation(-originCoord.x, -originCoord.y);
-        
-        CGPoint sourceRelativeOrigin = CGPointApplyAffineTransform(sourcePosition, transformRelativeOrigin);
-        
-        CGFloat x = sourceRelativeOrigin.x;
-        CGFloat y = sourceRelativeOrigin.y;
-        
-        // bleh if x=0
-        CGFloat intensity = 1.0 / ( exp( (sqrt(x*x+y*y)-200)/200.0 ) + 1.0 );
-        CGFloat r = 1.0 - intensity;
-        CGFloat t = atan2(y,x);
-        
-        CGPoint pointLogScaled = CGPointMake(self.bounds.size.width/2 * -r*cos(t), self.bounds.size.width/2 * -r*sin(t));
-        
-        CGAffineTransform centerTransform = CGAffineTransformMakeTranslation(self.bounds.size.width/2, self.bounds.size.height/2);
-        CGPoint pointScaledCentered = CGPointApplyAffineTransform(pointLogScaled, centerTransform);
-        
-        layer.position = pointScaledCentered;
-        layer.opacity = intensity;
-        
-        [sourcesLayer addSublayer:layer];
-    }
+   // originCoord = newCoord;
+//    
+//        CALayer *layer = (CALayer *) CFDictionaryGetValue(dict, source);
+//        
+//        CGPoint sourcePosition = CGPointMake(source.position.x, source.position.y);
+//        
+//        CGAffineTransform transformRelativeOrigin = CGAffineTransformMakeTranslation(-originCoord.x, -originCoord.y);
+//        
+//        CGPoint sourceRelativeOrigin = CGPointApplyAffineTransform(sourcePosition, transformRelativeOrigin);
+//        
+//        CGFloat x = sourceRelativeOrigin.x;
+//        CGFloat y = sourceRelativeOrigin.y;
+//        
+//        // bleh if x=0
+//        CGFloat intensity = 1.0 / ( exp( (sqrt(x*x+y*y)-200)/200.0 ) + 1.0 );
+//        CGFloat r = 1.0 - intensity;
+//        CGFloat t = atan2(y,x);
+//        
+//        CGPoint pointLogScaled = CGPointMake(self.bounds.size.width/2 * -r*cos(t), self.bounds.size.width/2 * -r*sin(t));
+//        
+//        CGAffineTransform centerTransform = CGAffineTransformMakeTranslation(self.bounds.size.width/2, self.bounds.size.height/2);
+//        CGPoint pointScaledCentered = CGPointApplyAffineTransform(pointLogScaled, centerTransform);
+//        
+//        layer.position = pointScaledCentered;
+//        layer.opacity = intensity;
+//        
+//        [sourcesLayer addSublayer:layer];
+//    }
 }
 
 - (void) setOriginOrientation:(CGFloat)newOrientation {
@@ -119,8 +92,8 @@
     if (self) {
 //        self.opaque = NO;
 //        self.backgroundColor = [UIColor clearColor];
-        sourcesLayer = [CALayer layer];
-        [self.layer addSublayer:sourcesLayer];
+//        sourcesLayer = [CALayer layer];
+//        [self.layer addSublayer:sourcesLayer];
         
         mSources = [[NSMutableArray alloc] init];
         

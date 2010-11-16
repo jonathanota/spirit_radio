@@ -18,7 +18,7 @@
     
     CGPoint originCoord;
     
-    CALayer *sourcesLayer;
+    CALayer *sourceLayer;
     
     CFMutableDictionaryRef dict;
 }
@@ -26,7 +26,6 @@
 @property (readonly) CALayer *screenCircle;
 @property (readonly) CALayer *originCircle;
 
-@property (retain) NSMutableArray *sources;
 @property (assign) CGPoint originCoord;
 @property (nonatomic, assign) CGFloat originOrientation;
 

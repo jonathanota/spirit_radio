@@ -23,9 +23,9 @@
     
     ALSource *staticSource;
     
-    NSMutableArray *mSources;
     MPMoviePlayerController *noisePlayer;
     
+    ALSource *mySource;
     EWStreamBufferData *coolBufferData;
 }
 
