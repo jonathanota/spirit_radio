@@ -99,6 +99,11 @@
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
     CLLocationDirection heading = newHeading.trueHeading;
+    
+    if (isInDemoMode) {
+        heading = 0;
+    }
+    
     mRadians = (90.0 - heading) * (M_PI/180.0);
     
     headingWrong = newHeading.headingAccuracy < 0;
