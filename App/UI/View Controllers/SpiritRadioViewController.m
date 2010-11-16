@@ -49,10 +49,10 @@
     return self;
 }
 
-- (NSMutableArray *) defaultSources {
+- (NSMutableArray *) sourcesFromPlist:(NSString *)plistName {
     NSMutableArray *defaultSources = [NSMutableArray array];
     
-    NSString *defaultSourcePath = [[NSBundle mainBundle] pathForResource:@"default_sources" ofType:@"plist"];
+    NSString *defaultSourcePath = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];
     for(NSDictionary *sourceRecord in [NSArray arrayWithContentsOfFile:defaultSourcePath]) {
         NSString *baseName = [sourceRecord valueForKey:@"Base Name"];
         CGFloat x = [[sourceRecord valueForKeyPath:@"Position.x"] floatValue];
@@ -73,9 +73,19 @@
     return defaultSources;
 }
 
+- (NSMutableArray *) defaultSources {
+    return [self sourcesFromPlist:@"default_sources"];
+}
+
+- (NSMutableArray *) demoSources {
+    return [self sourcesFromPlist:@"demo_sources"];
+}
+
 - (void) updateQueue {
-    for (ALSource *source in self.sources) {
-        [source.streamBuffer updateQueue:source.sourceId];
+    @synchronized(self.sources) { // Is this even necessary?
+        for (ALSource *source in self.sources) {
+            [source.streamBuffer updateQueue:source.sourceId];
+        }
     }
 }
 
@@ -98,6 +108,22 @@
     self.sources = [self defaultSources];
     
     [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(updateQueue) userInfo:nil repeats:YES];
+    
+    [self performSelector:@selector(switchit) withObject:nil afterDelay:5.0];
+}
+
+- (void) switchit {
+    sourcesFaded = 0;
+    for (ALSource *source in self.sources) {
+        [source fadeTo:0 duration:0.5 target:self selector:@selector(finishSwitchit)];
+    }
+}
+
+- (void) finishSwitchit {
+    sourcesFaded++;
+    if (sourcesFaded >= [self.sources count]) {
+        self.sources = [self demoSources];
+    }
 }
 
 - (void) setStatic:(CGFloat)amount {

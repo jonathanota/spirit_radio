@@ -26,6 +26,8 @@
     MPMoviePlayerController *noisePlayer;
     
     NSMutableArray *mSources;
+    
+    NSUInteger sourcesFaded;
 }
 
 @property (readonly) RadarView *radarView;
