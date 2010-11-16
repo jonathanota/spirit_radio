@@ -17,7 +17,11 @@
 
 @implementation SpiritRadioViewController
 
-@synthesize sources = mSources;
+- (void) setSources:(NSMutableArray *)sources {
+    [mSources release];
+    mSources = sources;
+    self.radarView.sources = mSources;
+}
 
 - (NSMutableArray *) sources {
     if (!mSources) {
@@ -96,7 +100,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //[self.view addSubview:self.radarView];
+    [self.view addSubview:self.radarView];
     
     noisePlayer = [[MPMoviePlayerController alloc] initWithContentURL:[[NSBundle mainBundle] URLForResource:@"noise_compressed" withExtension:@"mp4"]];
     noisePlayer.view.frame = self.view.bounds;

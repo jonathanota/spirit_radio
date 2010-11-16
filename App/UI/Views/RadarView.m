@@ -15,6 +15,7 @@
 @implementation RadarView
 
 @synthesize originOrientation = mOriginOrientation;
+@synthesize sources = mSources;
 
 - (CGPoint) originCoord {
     return originCoord;

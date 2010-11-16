@@ -25,6 +25,7 @@
 
 @property (readonly) CALayer *screenCircle;
 @property (readonly) CALayer *originCircle;
+@property (readwrite, retain) NSMutableArray *sources;
 
 @property (assign) CGPoint originCoord;
 @property (nonatomic, assign) CGFloat originOrientation;
