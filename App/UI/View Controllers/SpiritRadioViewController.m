@@ -72,8 +72,8 @@
         mySource.streamBuffer = [EWStreamBufferData streamBufferDataFromFileBaseName:baseName];
         mySource.streamBuffer.audioLooping = YES;
         mySource.position = position;
-        mySource.referenceDistance = 50;
-        mySource.rolloffFactor = 20;
+        mySource.referenceDistance = 150;
+        mySource.rolloffFactor = 10;
         
         [defaultSources addObject:mySource];
     };
