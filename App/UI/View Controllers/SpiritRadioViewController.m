@@ -151,7 +151,7 @@
 }
 
 - (void) setStatic:(CGFloat)amount {
-    [staticSource fadeTo:amount*0.8 duration:0.1 target:nil selector:nil];
+    [staticSource fadeTo:amount*0.6 duration:0.1 target:nil selector:nil];
     
     [UIView beginAnimations:nil context:NULL];
     noisePlayer.view.alpha = amount;
