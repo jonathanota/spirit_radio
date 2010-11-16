@@ -60,7 +60,10 @@
 
 - (void) updateQueue {
     [coolBufferData updateQueue:mySource.sourceId];
-    [buffer2 updateQueue:source2.sourceId];
+    [source2.streamBuffer updateQueue:source2.sourceId];
+    [buffer3 updateQueue:source3.sourceId];
+    
+    
 }
 
 - (void)viewDidLoad {
@@ -88,12 +91,23 @@
     mySource.rolloffFactor = 20;
     
     source2 = [[ALSource source] retain];
-    buffer2 = [[EWStreamBufferData streamBufferDataFromFileBaseName:@"laugh"] retain];
+    source2.streamBuffer = [EWStreamBufferData streamBufferDataFromFileBaseName:@"laugh"];
     buffer2.audioLooping = YES;
     
     source2.position = alpoint(-100,0,0);
     source2.referenceDistance = 50;
     source2.rolloffFactor = 20;
+    
+    
+    source3 = [[ALSource source] retain];
+    buffer3 = [[EWStreamBufferData streamBufferDataFromFileBaseName:@"librarian"] retain];
+    buffer3.audioLooping = YES;
+    
+    source3.position = alpoint(-50,-100,0);
+    source3.referenceDistance = 50;
+    source3.rolloffFactor = 20;
+    
+    
     
     [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(updateQueue) userInfo:nil repeats:YES];
 }
