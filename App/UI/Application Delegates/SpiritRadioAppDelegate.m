@@ -28,14 +28,15 @@
 - (void) toggleDemoMode:(id)sender {
     isInDemoMode = !isInDemoMode;
     if (isInDemoMode) {
-        [self.radioViewController switchToDemoMode];
         [locationManager stopUpdatingHeading];
         [locationManager stopUpdatingLocation];
         mOrigin = CGPointZero;
         mRadians = M_PI/2;
+        gpsAcc = 1000;
+        [self.radioViewController switchToDemoMode];
     } else {
         [locationManager startUpdatingHeading];
-        [locationManager stopUpdatingLocation];
+        [locationManager startUpdatingLocation];
     }
 
 }
@@ -119,6 +120,8 @@
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     mOrigin = CGPointMake(newLocation.coordinate.latitude * pow(10, 6), newLocation.coordinate.longitude * pow(10, 6));
+    
+    NSLog(@"update loc");
     
     self.radioViewController.radarView.originCoord = mOrigin;
     
