@@ -112,6 +112,8 @@
     
     [OALSimpleAudio sharedInstanceWithSources:32];
     
+    [OpenALManager sharedInstance].currentContext.distanceModel = AL_EXPONENT_DISTANCE;
+    
     self.sources = [self defaultSources];
     
     [NSTimer scheduledTimerWithTimeInterval:(1.0/30.0) target:self selector:@selector(updateQueue) userInfo:nil repeats:YES];

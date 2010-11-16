@@ -2,7 +2,15 @@
 	{
 		"Base Name" = librarian;
 		Position = {
-			x = 100;
+			x = 50;
+			y = 0;
+			z = 0;
+		};
+	},
+	{
+		"Base Name" = ColdFunk;
+		Position = {
+			x = "-2000";
 			y = 0;
 			z = 0;
 		};
