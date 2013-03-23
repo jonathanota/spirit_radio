@@ -1,5 +1,13 @@
 (
 	{
+		"Base Name" = foghorn;
+		Position = {
+			x = "40444162.832656694";
+			y = "-79942853.45077515";
+			z = 0;
+		};
+	},
+	{
 		"Base Name" = foundry2;
 		Position = {
 			x = "40441745.932184936";
